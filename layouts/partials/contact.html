@@ -1,0 +1,37 @@
+<div class="grid-container">
+<div class="grid-item max">
+  <div ></div>
+  <div >
+    <div class="title">
+      have wisdom to share?
+      <br>
+      Connect with us!
+      </div>
+      <div class="f-10">
+      We welcome all creatives and experiences, share your knowledge through CBTV:
+    </div>
+  </div>
+  <div class="footer grid-container">
+    <div class="grid-container">
+      <div class="grid-item">
+        <div></div>
+        <div class="rem">Email us: </div>
+        <div></div>
+        <div class="rem">Message us: </div>
+      </div>
+      <div class="grid-item">
+        <div><img src="{{ trim .Params.emailImage "/" | absURL }}" alt="email"></div>
+        <div class="rem">{{ .Params.email }}</div>
+        <div><img src="{{ trim .Params.messageImage "/" | absURL }}" alt="Message"></div>
+        <div class="rem">{{ .Params.message }}</div>
+      </div> 
+    </div>
+    <div class="grid-container">
+      <div class="grid-item max">
+        <div class="img1"><img src="{{ trim .Params.image1 "/" | absURL }}" alt=""></div>
+        <div class="img2"><img src="{{ trim .Params.image2 "/" | absURL }}" alt=""></div>
+        <div class="img3"><img src="{{ trim .Params.image3 "/" | absURL }}" alt=""></div>
+        <div class="img4"><img src="{{ trim .Params.image4 "/" | absURL }}" alt=""></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<footer role="contentinfo" {{- if eq hugo.Environment "development" -}}class="dev-mode"{{ end }}>
+  <!--
+  <div class="footer">
+    <div>
+     <a href="{{ .Site.Home.Permalink }}" aria-label="Go to the home page">
+      &copy; {{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ now.Format "2006"}} {{ end }}
+    </a>
+  </div>
+    {{ partialCached "social/follow.html" . }}
+  </div>
+-->
+  {{- if eq hugo.Environment "development" -}}
+    {{ partial "development.html" . -}}
+  {{- end }}
+</footer>

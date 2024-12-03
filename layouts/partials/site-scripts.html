@@ -1,0 +1,23 @@
+<!-- Our main script below the body -->
+
+{{- $config     := resources.Get "/js/cookieconsent-config.js" }}
+{{- $cookie     := resources.Get "/js/cookieconsent3.js" }}
+
+{{- $carousel   := resources.Get "/js/carousel.js" }} 
+{{- $sw         := resources.Get "/js/sw.js" }}
+{{- $custom     := resources.Get "/js/custom.js" }}
+
+{{ $js := "" }}
+
+{{ if and $sw $custom }}
+    {{- $js = slice $sw $custom $cookie $config | resources.Concat "js/script.js" }}
+{{ else }}
+    {{ warnf "One or more javascripts are missing." }}
+{{ end }}
+
+<!-- minify only when you are not in development mode -->
+{{- if eq hugo.Environment "production" -}}
+    {{- $js = $js | minify | fingerprint -}}
+{{- end -}}
+
+<script type="module" src="{{ $js.RelPermalink }}" defer ></script>

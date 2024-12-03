@@ -1,0 +1,27 @@
+<div class="title">{{ .Title }}</div> 
+
+<article class="grid-container">
+  {{ range  $index, $value := .Params.data }}
+  <div class="columns"> 
+    <div class="header {{ if or (eq $index 0) (eq $index (sub (len $.Params.data) 1)) }}drop{{ end }}"></div>
+    <div class="step">
+      {{- .step -}}
+    </div>
+    {{ if lt $index 2}}
+    <div class="center">
+    <div class="circle"> 
+      {{- .title -}}
+    </div>
+    </div>
+    {{ else }}
+    <div class="center">
+      <img src="{{ trim $.Params.uploadImage "/" | absURL }}" alt="upload">
+    </div>
+    <div class="upload">{{- .title -}}</div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+</article>
+
+<div class="footer">{{ .Params.conditions }}</div> 

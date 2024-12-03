@@ -1,0 +1,59 @@
+<div class="title">{{ .Title }}</div>
+
+<div class="grid-container">
+{{ range .Params.data }}
+  {{ if .topic }}{{ else }}
+    <article class="grid-container">
+    <div class="grid-item">
+      <div>
+        <img src= "{{ trim .image "/" | absURL }}" alt="">
+      </div>
+      <div class="grid-title">
+        {{ .title }}
+      </div>
+      <div class="text">
+        {{ .text }}
+      </div>
+    </div>
+  </article>
+  {{ end }}
+{{ end }}
+</div>
+
+  {{ range .Params.data }}
+    {{ if .topic }}
+<div class="title">{{ .title }}</div>
+
+    <article class="grid-container nb">
+      <div class="grid-item">
+        
+          <img src= "{{ trim .image "/" | absURL }}" alt="">
+       
+      </div>
+      <div class="grid-item block">
+          <div> </div>
+        <div class="grid-content">
+          {{ .text }}
+        </div>
+        <div class="grid-content">
+          <button>{{ i18n "click"}} {{ i18n "play"}}</button>
+          </div>
+          <div>
+          <div>
+          Topic: {{ .topic }}
+        </div>
+        <div>
+          Duration: {{ .duration }}
+        </div>
+      </div>
+      <div>
+        
+      </div>
+      </div>
+      </div>
+    </article>
+
+    {{ end }}
+  {{ end }}
+ 
+  

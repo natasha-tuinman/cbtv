@@ -1,0 +1,40 @@
+{{ define "main" }}
+{{- .Scratch.Set "layout" "layouts/index.html" -}}
+
+{{- $featured_image := .Site.Params.featured_imageX -}}
+
+<section 
+  id="home" 
+  {{ if $featured_image }}style="background-image: url('{{ $featured_image }}');"{{ end }}
+>
+<div class="grid-item">
+  <div ></div>
+  <div >
+    <div class="title">CBTB</div>
+    <div>{{ .Content }}</div>
+  </div>
+  <div class="footer">
+    <img src="{{ trim .Params.image "/" | absURL }}" title="in Holland" alt="in Holland">
+  </div>
+</div>
+</section>
+ 
+{{ range (where .Site.Pages "Section" "home" ) }}
+<section id="{{ .Params.id }}" >
+  {{ if eq .File.BaseFileName "what-is-cbtv" }}
+    {{ partial "what-is-cbtv.html" . }}
+  {{ else if eq .File.BaseFileName "design-your-future" }}
+    {{ partial "design-your-future.html" . }}
+  {{ else if eq .Params.id "the-cbtv-archive" }}  {{/* id in frontmatter as we use a page bundle here*/}}
+    {{ partial "the-cbtv-archive.html" . }}
+  {{ else if eq .File.BaseFileName "merch" }}
+    {{ partial "merch.html" . }}
+  {{ else if eq .File.BaseFileName "contact" }}
+    {{ partial "contact.html" . }}
+  {{ else if eq .File.BaseFileName "send-in-your-content" }}
+    {{ partial "send-in-your-content.html" . }}
+  {{ end }}
+</section>
+{{ end }}
+
+{{ end }}

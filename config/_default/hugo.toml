@@ -1,0 +1,52 @@
+title = "CBTV"
+baseURL = "/"
+theme = "" 
+resourceDir = "../resources"
+
+defaultContentLanguage = "en"
+sectionPagesMenu = "main" 
+enableRobotsTXT = true
+
+[services.googleAnalytics]
+id = ''
+
+[pagination]
+pagerSize = 5
+
+[languages.en]
+contentDir = "content/en"
+languageCode = 'en-US'
+weight = 1
+[languages.en.params]
+language = "English"
+
+[languages.nl]
+contentDir = "content/nl"
+languageCode = 'nl'
+weight = 1
+[languages.nl.params]
+language = "Dutch"
+
+[sitemap]
+changefreq = "monthly"
+priority = 0.5
+filename = "sitemap.xml"
+
+[params]
+text_color = ""
+author = ""
+favicon = ""
+site_logo = ""
+description = "Where creativity meets opportunity"
+recent_posts_number = 5
+featured_image= 'images/home.png'
+
+[params.social.facebook]
+username = "ourmaninindia"
+# profilelink = "https://www.facebook.com/ourmaninindia"
+
+[params.social.linkedin]
+username = "ourmaninindia"
+
+[params.social.bluesky]
+username = "ourmaninindia.dev"

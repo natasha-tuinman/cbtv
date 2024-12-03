@@ -1,0 +1,31 @@
+<nav role="navigation">
+  <div>
+      {{ if .Site.Menus.main }}
+      <div class="noflex">
+        <a href="#" class="mobile-nav-toggle">Menu  </a>
+          <div class="primary-navigation" data-visible="false">
+          <div class="table">Table of Contents</div>
+          <ul>
+            {{ range .Site.RegularPages }}
+            {{ if ne .RelPermalink "/home/"}}
+            <li>
+              <a href="#{{ .Params.id }}" title="{{ i18n "pageTitle" . }}">
+                {{ .Name }} 
+              </a>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
+        </div>
+    
+      </div>
+      {{ end }}
+      <div>
+        <form action="/search" method="get">
+          <label class="search" for="search">Search:</label>
+          <input type="search" id="search" name="q" placeholder="Enter search terms...">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+  </div>
+</nav>

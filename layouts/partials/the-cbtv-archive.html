@@ -1,0 +1,54 @@
+<div>
+  <div class="grid-title">{{ .Title }}</div>
+  <div class="subtitle">{{ .Params.subTitle }}</div>
+</div>
+<article class="grid-container">
+  {{- $data := .Page.Params.data }} <!-- Access data from the current page context -->
+
+  {{- range .Resources }}
+    {{ $str := .Name }}
+    {{ $number := replaceRE "[^0-9]" "" $str }} <!-- Extract number from image name -->
+    {{ $index := int $number }} <!-- Convert $number to integer -->
+    
+    {{ if and $data (lt $index (len $data)) }}  <!-- Check if the index exists in data -->
+      {{ $item := index $data $index }}  <!-- Get the corresponding item from data -->
+      <div class="grid-item" style="background-image: url('{{ .RelPermalink }}');">
+        <div class="caps">{{ $item.text }}</div>
+        <div class="button">
+          <button>{{ i18n "watch-now" }}</button>
+        </div>
+      </div>
+    {{ else }}
+      <div class="grid-item">
+        <p>Error: Data not found for image {{ $str }}</p>
+      </div>
+    {{ end }}
+  {{- end }}
+</article>
+
+<div class="bg flex-container">
+  <div class="blog">{{ .Params.blog }}</div>
+  <ul class="item">
+    {{- range .Params.sidemenu }}
+    <li><a href="#">{{ .title }}</a></li>
+    {{- end }}
+  </ul>
+
+  <div class="item photo">
+    <img class="circle" src="{{ .Params.photoSrc }}" alt="{{ .Params.photoName }}">
+    <div class="name">{{ .Params.photoName }}</div>
+  </div>
+  <div class="item normal">
+  <div class="grid-container week">
+    {{- range .Params.text }}
+    <div class="header">{{ .title }}</div>
+    <div class="text">{{ .text }}</div>
+    <div class="footer">{{ i18n "read-more" }}
+      <br>
+      <a href="#">{{ i18n "click" }}</a>
+      {{ i18n "continue" }}
+    </div>
+    {{- end }}
+    </div>
+  </div>
+</div>

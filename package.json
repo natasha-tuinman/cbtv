@@ -1,0 +1,16 @@
+{
+  "name": "cbtv",
+  "version": "1.0.0",
+  "description": "This CBTV web site has been created using Hugo (using Go language), SCSS (using SASS) to compile it, and very little vanilla JavaScript.",
+  "main": "index.js",
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/natasha-tuinman/cbtv.git"
+ },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

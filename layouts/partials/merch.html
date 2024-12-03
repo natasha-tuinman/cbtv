@@ -1,0 +1,7 @@
+<div class="title">{{ .Title }}</div>
+<article class="grid-container">
+  {{ range  $index, $value := .Params.data }} 
+    <img src="{{ trim .image "/" | absURL }}" alt="Merchandise">
+  {{ end }}
+</article>
+<div></div>

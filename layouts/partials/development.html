@@ -1,0 +1,13 @@
+<!-- When development mode is on this helps with template debugging issues -->
+{{- with .Scratch.Get "layout" -}}
+
+<div class="development">
+  <div>Template: <span>{{ . }}</span></div>
+  <div>Kind: <span>{{ $.Kind }}</span></div>
+  {{ if ($.Scratch.Get "id") }}
+  <div>Page ID: <span>{{ $.Scratch.Get "id" }}</span></div> 
+  {{ end }}
+  <div>Section: <span>{{ $.Section }}</span></div>
+</div>
+
+{{- end }}
