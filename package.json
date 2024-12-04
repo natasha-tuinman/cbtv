@@ -4,13 +4,26 @@
   "description": "This CBTV web site has been created using Hugo (using Go language), SCSS (using SASS) to compile it, and very little vanilla JavaScript.",
   "main": "index.js",
   "repository": {
-  "type": "git",
-  "url": "git@github.com:natasha-tuinman/cbtv.git"
- },
+    "type": "git",
+    "url": "git@github.com:natasha-tuinman/cbtv.git"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "version": " auto-changelog -p --template keepachangelog --commit-limit 0 && git add CHANGELOG.md",
+    "deploy" : " hugo server;",
+    "eslint" : " nnpx eslint assets/js/custom.js",
+    "jsdoc"  : " jsdoc -a all -c jsdoc.json -r -R README.md -d docs/jsdoc "
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Natasha Tuinman",
+  "license": "ISC",
+  "dependencies": {
+    "jsdoc": "^4.0.4",
+    "netlify-plugin-hugo-cache-resources": "^0.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "docdash": "^2.0.2",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0"
+  }
 }

@@ -1,11 +1,12 @@
 <div class="title">{{ .Title }}</div> 
+<div class="subtitle">{{ .Params.subtitle }}</div> 
 
 <article class="grid-container">
   {{ range  $index, $value := .Params.data }}
   <div class="columns"> 
     <div class="header {{ if or (eq $index 0) (eq $index (sub (len $.Params.data) 1)) }}drop{{ end }}"></div>
     <div class="step">
-      {{- .step -}}
+      {{ i18n "step" }} {{ .step }}
     </div>
     {{ if lt $index 2}}
     <div class="center">
@@ -15,7 +16,7 @@
     </div>
     {{ else }}
     <div class="center">
-      <img src="{{ trim $.Params.uploadImage "/" | absURL }}" alt="upload">
+      <img src="{{ trim $.Params.upload "/" | absURL }}" alt="upload">
     </div>
     <div class="upload">{{- .title -}}</div>
     {{ end }}

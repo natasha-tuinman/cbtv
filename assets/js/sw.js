@@ -1,4 +1,13 @@
-/*! service worker -> https://techformist.com/add-pwa-hugo/ */
+/**
+ * @description service worker -> https://techformist.com/add-pwa-hugo/ 
+*/
+
+/**
+ * Represents a person.
+ * @constructor
+ * @param {string} name - The name of the person.
+ * @param {number} age - The age of the person.
+ */
 
 if('serviceWorker' in navigator) {
     navigator.serviceWorker

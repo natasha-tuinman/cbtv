@@ -1,11 +1,15 @@
-/** 
-* @description navToggle. Add event listeners 
-**/
+/**
+ * This is a function description.
+ * @param {string} param - A description of the parameter.
+ * @returns {string} The return value description.
+ * @description navToggle. Add event listeners 
+*/
 
 const primaryNav = document.querySelector('.primary-navigation');
 const navToggle  = document.querySelector('.mobile-nav-toggle');
 
-navToggle.addEventListener('click',(e) => {
+// option to replace () with (e)
+navToggle.addEventListener('click',() => {
   const visibility = primaryNav.getAttribute('data-visible');
  
   if (visibility === 'false'){

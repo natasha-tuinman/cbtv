@@ -2,7 +2,7 @@ title = "CBTV"
 baseURL = "/"
 theme = "" 
 resourceDir = "../resources"
-
+disableModules = true
 defaultContentLanguage = "en"
 sectionPagesMenu = "main" 
 enableRobotsTXT = true

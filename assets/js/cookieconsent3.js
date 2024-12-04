@@ -1,8 +1,9 @@
-/*!
+/** 
  * CookieConsent 3.0.1
  * https://github.com/orestbida/cookieconsent
  * Author Orest Bida
  * Released under the MIT License
+ * @description cookieconsent3.js
  */
 var e, t;
 e = this, t = function(e) {

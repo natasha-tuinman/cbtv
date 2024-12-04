@@ -22,6 +22,19 @@ v21.1.0
 Sass version
 1.71.1
 ```
+## Running Hugo
+To run hugo locally on port 1313 run this command:
+--- 
+hugo server --disableFastRender
+---
+To run it in production mode, run this package.json command:
+---
+npm run deploy
+---
+
+## Contents
+The data is stored in *Content/en/home* in some 7 markdown files, each representing a page. As this is a single page site, each ‘page’ has it’s own id based on the title. 
+
 ## CSS styling
 Create the scss files required in 'assets/scss' where main.scss is the master file which calls all the required stylesheets. 'custom.scss' is the main file for all the styling. 
 

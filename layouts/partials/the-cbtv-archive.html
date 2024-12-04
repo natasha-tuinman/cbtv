@@ -8,12 +8,14 @@
   {{- range .Resources }}
     {{ $str := .Name }}
     {{ $number := replaceRE "[^0-9]" "" $str }} <!-- Extract number from image name -->
+    
+    {{ if $number }}
     {{ $index := int $number }} <!-- Convert $number to integer -->
     
     {{ if and $data (lt $index (len $data)) }}  <!-- Check if the index exists in data -->
       {{ $item := index $data $index }}  <!-- Get the corresponding item from data -->
       <div class="grid-item" style="background-image: url('{{ .RelPermalink }}');">
-        <div class="caps">{{ $item.text }}</div>
+        <div class="caps">{{ $item.title }}</div>
         <div class="button">
           <button>{{ i18n "watch-now" }}</button>
         </div>
@@ -23,6 +25,7 @@
         <p>Error: Data not found for image {{ $str }}</p>
       </div>
     {{ end }}
+    {{ end }}
   {{- end }}
 </article>
 
@@ -30,25 +33,25 @@
   <div class="blog">{{ .Params.blog }}</div>
   <ul class="item">
     {{- range .Params.sidemenu }}
-    <li><a href="#">{{ .title }}</a></li>
+    <li><a href="#">{{ .item }}</a></li>
     {{- end }}
   </ul>
 
   <div class="item photo">
-    <img class="circle" src="{{ .Params.photoSrc }}" alt="{{ .Params.photoName }}">
-    <div class="name">{{ .Params.photoName }}</div>
+    <img class="circle" src="{{ .Params.image }}" alt="{{ .Params.imageName }}">
+    <div class="name">{{ .Params.imageName }}</div>
   </div>
   <div class="item normal">
   <div class="grid-container week">
-    {{- range .Params.text }}
-    <div class="header">{{ .title }}</div>
-    <div class="text">{{ .text }}</div>
+
+    <div class="header">{{ .Params.colTitle }}</div>
+    <div class="text">{{ .Content }}</div>
     <div class="footer">{{ i18n "read-more" }}
       <br>
       <a href="#">{{ i18n "click" }}</a>
       {{ i18n "continue" }}
     </div>
-    {{- end }}
+
     </div>
   </div>
 </div>

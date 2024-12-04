@@ -8,3 +8,9 @@
   translation: to continue reading 
 - id: play
   translation: play to watch
+- id: email
+  translation: "Email us"
+- id: message
+  translation: "Message us"
+- id: step
+  translation: "Step"
