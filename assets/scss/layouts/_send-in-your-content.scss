@@ -1,0 +1,80 @@
+
+#send-in-your-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh; /* not Full height of the viewport */
+  
+  .step {
+    justify-content: center;
+    padding-bottom: 1rem;;
+  }
+  article {
+    flex: 1; /* Expands to fill available space */
+  }
+
+  .header {
+    flex: 1;
+  }
+
+  .drop {
+    flex: unset;
+  }
+
+  img {
+    max-width: 100px;
+  }
+
+  .title {
+    padding-top: 1rem;
+    width: 100%;
+    font-size: 1.25rem;
+    text-align: center;
+    font-family: "Lastica";
+    letter-spacing:0.75cqb;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(3,1fr);
+  }
+  
+  .columns {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
+  .columns > * {
+    display: flex; /* Ensure this flex container holds flex items */
+    gap: 1rem; /* Optional: Adds space between items */
+  }
+
+  .upload {
+    justify-content: center;
+  }
+
+  .center {
+    justify-content: center; /* Centers children vertically */
+  }
+
+  .circle {
+    display: flex; /* Makes the circle a flex container */
+    flex-direction: column; /* Aligns its children vertically */
+    align-items: center; /* Centers children horizontally */
+    border-radius: 50%; /* Makes it a circle */
+    justify-content: center; /* Centers children vertically */
+    width: fit-content;
+    // max-width: 120px;
+    aspect-ratio: 1 / 1; /* Height will automatically adjust to match the width */
+    padding: 0.5rem;
+    text-align: center;
+    border: 3px solid var(--green-4); 
+  }
+
+  .footer {
+    font-size: .8rem;
+    color: var(--gray-3);
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+}

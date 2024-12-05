@@ -1,0 +1,23 @@
+#what-is-cbtv {
+
+  .grid-item {
+    align-self: center; /* Vertically center the content in the column */
+  }
+
+  /* For screens smaller than 800px, reduce the minimum size */
+  @media (max-width: 600px) {
+    .flexible-grid >*:first-child {
+      display: none;
+    }
+  }
+
+  .grid-title {
+    font-size:1.5rem;
+    margin:.3rem 0;
+    padding-left: 2rem;
+  }
+}
+
+section#design-your-future {
+  display: block;
+}

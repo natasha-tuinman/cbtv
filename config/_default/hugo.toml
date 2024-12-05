@@ -4,6 +4,7 @@ theme = ""
 resourceDir = "../resources"
 disableModules = true
 defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 sectionPagesMenu = "main" 
 enableRobotsTXT = true
 
@@ -13,17 +14,20 @@ id = ''
 [pagination]
 pagerSize = 5
 
+[languages]
 [languages.en]
-contentDir = "content/en"
-languageCode = 'en-US'
+disabled = false
+contentDir = "content"
+languageCode = 'en-GB'
 weight = 1
 [languages.en.params]
 language = "English"
 
 [languages.nl]
+disabled = true
 contentDir = "content/nl"
 languageCode = 'nl'
-weight = 1
+weight = 2
 [languages.nl.params]
 language = "Dutch"
 
@@ -50,3 +54,34 @@ username = "ourmaninindia"
 
 [params.social.bluesky]
 username = "ourmaninindia.dev"
+
+
+[[menu.main]]
+  name = "What is CBTV"
+  url = "what-is-CBTV"
+  weight = 1
+  params = { id = "what-is-CBTV" }
+
+[[menu.main]]
+  name = "Design your future"
+  url = "design-your-future"
+  weight = 2
+  params = { id = "design-your-future" }
+
+[[menu.main]]
+  name = "The CBTV archive"
+  url = "the-CBTV-archive"
+  weight = 3
+  params = { id = "the-CBTV-archive" }
+
+[[menu.main]]
+  name = "Contact"
+  url = "contact"
+  weight = 4
+  params = { id = "contact" }
+
+[[menu.main]]
+  name = "Send in your content"
+  url = "send-in-your-content"
+  weight = 5
+  params = { id = "send-in-your-content" }

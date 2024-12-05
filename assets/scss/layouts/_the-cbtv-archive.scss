@@ -1,0 +1,104 @@
+#the-cbtv-archive {
+  display: flex;
+  flex-direction: column;
+ 
+  .bg {
+    background-color: var(--menu-bg); 
+    height: inherit;
+  }
+
+  .grid-item {
+    gap: 2rem;
+    grid-template-rows: repeat(2, 1fr);
+    background-repeat: no-repeat;  /* Prevent the image from repeating */
+  background-size: cover;  /* Optional: Makes the image cover the entire element */
+  }
+
+  .item {
+    flex: 1; /* Each item takes up equal space */
+    padding: 10px; /* Optional: Add some padding for spacing inside the items */
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  button, 
+  .blog {
+    background: linear-gradient(90deg, #832eff, #fe4ff2);
+  }
+
+  .blog {
+    width: 100vw; /* Makes the header span the full width of the viewport */
+    text-transform: uppercase;
+    font-family: "Lastica";
+    letter-spacing: 0.75cqb;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    border-bottom-left-radius: 20px;
+    // height: 3rem;
+  }
+
+  ul{
+    background: var(--menu-bg);
+      padding: 1rem;
+      list-style: none;
+  }
+
+  li {
+    padding: 0.5rem;
+  }
+
+  .caps {
+    text-transform: uppercase;
+    font-size: .7rem;
+    text-align: center;
+  }
+
+  .photo {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--body-bg); 
+    & .name {
+      padding-top:1rem;
+    }
+  }
+
+  .circle {
+    border-radius: 50%;
+  }
+
+  .normal {
+    background-color: var(--body-bg); 
+  }
+
+  article.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .grid-title, .subtitle {
+    text-align: center;
+  }
+  .grid-title {
+    margin-bottom: 0;
+  };
+
+  .header {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .text{
+    padding: 0 1rem;
+    text-align: justify;
+  }
+
+  .footer {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+}

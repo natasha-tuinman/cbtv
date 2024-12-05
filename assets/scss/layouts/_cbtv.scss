@@ -1,0 +1,31 @@
+
+section#cbtv {
+  background-image: url('../home.png');
+  background-repeat: no-repeat;      /* Prevent the image from repeating */
+  background-position: center;      /* Center the image */  
+  background-size: 100vw 100vh; /* Set the height to the screen height, ignore the aspect ratio */
+  
+  .grid-item {
+    grid-template-rows: repeat(2, 1fr);
+    background: none;
+    // height: 80dvh;
+  }
+
+  .title {
+    font-size:2rem;
+    margin:.3rem 0;
+    text-transform: uppercase;
+    font-family: "Lastica";
+    letter-spacing:0.75cqb;
+  }
+
+  .footer {
+    width: 100%;
+    text-align: right;
+  }
+  img {
+    height: 80px;
+  background: var(--gray-3);
+  width: auto;
+  }
+}

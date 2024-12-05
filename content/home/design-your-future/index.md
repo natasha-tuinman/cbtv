@@ -15,6 +15,7 @@ subtitle: "Building your own Business"
 click: "play to watch" 
 topic: entrepreneurship
 duration: "30 minutes"
+weight: 2
 ---
 Running out of inspiration or motivation with you inovative idea? are you looking for tips and tricks, do you need professional advice? look no further, “”” is a sucessful entrepreneur and here to help you think smart and out of the box.
 

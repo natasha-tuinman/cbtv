@@ -1,0 +1,50 @@
+section#contact {
+
+  .grid-item {
+    grid-template-rows: repeat(3, 1fr);
+    background: none;
+    max-height: 80dvh;
+  }
+
+  .title {
+    font-family: "Lastica";
+    letter-spacing:0.75cqb;
+  }
+
+  img {
+    width: 1.5rem;
+    padding: .5rem 0;
+  }
+
+  .footer.grid-container,
+  .footer .grid-container {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .footer .grid-container:nth-child(2) {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .img1, 
+  .img4 {
+    text-align: center;
+    img {
+      width: 30px;
+    }
+  }
+
+  .img2 {
+    text-align: right;
+    img {
+      width: 25px;
+    }
+  }
+
+  .f-10 {
+    font-size: .6rem;
+  }
+
+  .rem {
+    font-size: .8rem;
+  }
+}

@@ -1,6 +1,7 @@
 ---
 title: "Send in your content"
 id: "send-in-your-content"
+weight: 6
 subtitle: "Here is how you can star in your own master class on CBTV"
 data: 
   - step: 1

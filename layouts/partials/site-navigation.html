@@ -6,10 +6,10 @@
           <div class="primary-navigation" data-visible="false">
           <div class="table">Table of Contents</div>
           <ul>
-            {{ range .Site.RegularPages }}
-            {{ if ne .RelPermalink "/home/"}}
+            {{ range .Site.Menus.main }}
+            {{ if ne .Weight 0 }}
             <li>
-              <a href="#{{ .Params.id }}" title="{{ i18n "pageTitle" . }}">
+              <a href="#{{ .Params.id }}" title="{{ .Name }}">
                 {{ .Name }} 
               </a>
             </li>

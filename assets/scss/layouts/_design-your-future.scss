@@ -1,0 +1,83 @@
+
+#design-your-future {
+
+  @media (max-width: 400px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
+    }
+  }
+      
+  .title4 {
+    font-size:1.2rem;
+    margin:.3em 0;
+    text-align: center;
+  }
+
+  .title3 {
+    font-size:2em;
+    margin:.3em 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .grid-item {
+    border: 0.8rem solid black;
+    padding: 0;
+    align-self: normal;
+    text-align: center;     
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .grid-item.block {
+    display: block;
+    text-align: justify;
+  }
+  
+  .grid-item.block > * {
+    margin-top: 1rem;
+  }
+  
+  .nb .grid-item {
+  border: 0;
+  }
+  
+  .grid-title {
+    font-size:1rem;
+    margin:.3rem 0;
+    color: var(--pink-4);
+    line-height: 1;
+    min-height: 50px;   
+  }
+  
+  .title {
+    font-size:2rem;
+    margin:.3rem 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Lastica";
+    letter-spacing:0.75cqb;
+  }
+  
+  .text {
+    font-size: 0.8rem;
+    padding: 0.5rem 0;
+    min-height: 120px; 
+  }
+  
+  .image-container img {
+    width: 300px;
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+  }
+  
+  .grid-item img {
+    max-width: 200px; /* Maximum width for the image */
+    width: 100%; /* Allows scaling down with the container */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  button {
+    font-size: 1rem;
+  }
+
+}

@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{- .Scratch.Set "layout" "layouts/index.html" -}}
 
-<section id="home">
+<section id="cbtv">
 <div class="grid-item">
   <div ></div>
   <div >
@@ -14,23 +14,12 @@
 </div>
 </section>
  
-{{ range (where .Site.Pages "Section" "home" ) }}
-<section id="{{ .Params.id }}" >
-  file={{ .Params.id }}
-  {{ if eq .Params.id "what-is-cbtv" }}
-    {{ partial "what-is-cbtv.html" . }}
-  {{ else if eq .Params.id "design-your-future" }}
-    {{ partial "design-your-future.html" . }}
-  {{ else if eq .Params.id "the-cbtv-archive" }}  {{/* id in frontmatter as we use a page bundle here*/}}
-    {{ partial "the-cbtv-archive.html" . }}
-  {{ else if eq .Params.id "merch" }}
-    {{ partial "merch.html" . }}
-  {{ else if eq .Params.id "contact" }}
-    {{ partial "contact.html" . }}
-  {{ else if eq .Params.id "send-in-your-content" }}
-    {{ partial "send-in-your-content.html" . }}
+{{ range (where .Site.Pages "Section" "home") }}
+  {{ if gt .Params.weight 0 }}
+  <section id=".Params.id">
+  {{  partial (printf "%s.html" .Params.id) . }}
+  </section>
   {{ end }}
-</section>
 {{ end }}
 
 {{ end }}
