@@ -1,6 +1,13 @@
-<article class="flexible-grid" >
+<article class="grid-container" >
   <div class="grid-item"> 
-    &nbsp;
+
+{{ $image := .Resources.Get .Params.image }}  <!-- Retrieve the image resource -->
+{{ if $image }}
+  <img src="{{ $image.RelPermalink }}" title="Bubbles" alt="a bubble going up" class="centered-image">
+{{ else }}
+  <p>{{ .Params.image }} not found</p>
+{{ end }}
+
   </div>
   <div class="grid-item">
   <div class="grid-title">

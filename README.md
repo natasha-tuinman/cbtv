@@ -1,12 +1,14 @@
 This CBTV web site has been created using Hugo (using Go language), SCSS (using SASS) to compile it, and very little vanilla JavaScript.
 
-Hugo is a super fast static site generator written in Go. It uses markdown files for content and templates for coding which makes it easy for content generators and developers respectively.
+A webpage is nothing but html text (*index.html*) displayed in a certain style (*main.css*), with a bit of scripting (*scipts.js*) to ensure certains things work as desired, e.g.menu popups, and images with reference to their location storage (usually a folder). 
+
+Hugo is a super fast static site generator written in Go to help us with that. It uses markdown files for content and templates for coding which makes it easy for content generators and developers respectively.
 
 Styling has been done using SCSS. Style rules are the foundation of Sass, just like they are for CSS. And they work the same way: you choose which elements to style with a selector, and declare properties that affect how those elements look. 
 
 Very little scripting has been done and all in vanilla JavaScript. This is mainly for the menu button to work and the cookie consent popup.
 
-Content is all stored in content/en/home in some 7 markdown files, each representing a page. As this is a single page site, each ‘page’ has its own id based on the title. 
+Content is all stored in a folder called *content/home* with some 6 subfolders each with a markdown file representing a section on the index page. As this is a single page site, each section has its own id based on the title of that section. With Hugo one could also easily have multiple short pages each with a distinct url rather than this single page site.
 
 ## Version
 ```

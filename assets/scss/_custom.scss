@@ -76,25 +76,7 @@ article {
     line-height: 1.5; // default is 1.15
 }
 
-.bg-top {
-  background-repeat:no-repeat;
-  background-position:top;
-}
-
-.cover { 
-  background-size:cover!important;
-}
-
-.development {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-top:1px solid black;
-    background-color: lightgray;
-    color: black;
-}
-
-article  svg {
+article svg {
   width: 1.5rem;
 }
 
@@ -110,41 +92,57 @@ a:hover {
   letter-spacing: normal; 
 }
 
+button {
+  max-width: max-content;
+  padding: 0.1em 0.5em;
+}
+
+header {
+  display: block;
+}
 
 section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  height:auto  ;
-  min-height: 90dvh;
+  min-height: 100vh; // use as a backup
+  min-height: 100dvh; // better for mobile 
   gap: 1.25rem;
   background: var(--body-bg);
   border-top:1px solid var(--gray-5);
   padding: 0.5rem;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic wrapping */
-  height:auto  ;
-  gap: 1.25rem;
-  width: 100%; /* Ensure the container takes up the full width of its parent */
-  max-width: 100%; /* Prevent unintended overflow */
-  box-sizing: border-box; /* Includes padding and border in width calculations */
+.bg-top {
+  background-repeat:no-repeat;
+  background-position:top;
 }
 
-.grid-item {
-  align-self: normal;
-  background: var(--body-bg);
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  padding: .75rem;
+.centered-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* Optional: ensures the image maintains aspect ratio */
 }
 
-.grid-title {
-  font-size:1.5em;
-  margin:.3em 0;
-  padding-left: 2rem;
-  font-family: "Lastica";
+.cover { 
+  background-size:cover!important;
+}
+
+.development {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top:1px solid black;
+  background-color: lightgray;
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 90vh;
+  justify-content: space-between;
 }
 
 .flexible-grid {
@@ -155,6 +153,31 @@ section {
 
 .flexible-grid >* {
   flex: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-auto-flow: column; // a useful option at times
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic wrapping */
+  height: auto  ;
+  gap: 1.25rem;
+  width: 100%; /* Ensure the container takes up the full width of its parent */
+  max-width: 100%; /* Prevent unintended overflow */
+  box-sizing: border-box; /* Includes padding and border in width calculations */
+  justify-items: center;  /* Optional: center horizontally */
+}
+
+.grid-item {
+  align-self: normal;
+  display: grid;
+  padding: .75rem;
+}
+
+.grid-title {
+  font-size:1.5em;
+  margin:.3em 0;
+  padding-left: 2rem;
+  font-family: "Lastica";
 }
 
 .image-container {
@@ -169,20 +192,35 @@ section {
   object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
-button {
-  max-width: max-content;
-  padding: 0.1em 0.5em;
+.primary-header {
+  display: grid;
+  // grid-template-areas: "stack";
+  place-items: center;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
-  height: 90vh;
-  justify-content: space-between;
+.primary-header > * {
+  // grid-area: stack;
+  grid-row: 1 / -1;
+  grid-column: 1 / -1;
 }
 
-header {
-  display: block;
+@media (min-width: 50em) {
+  .primary-header {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .primary-header__image {
+    grid-column: 1;
+  }
+
+  .primary-header__title {
+    grid-column: 2;
+  }
 }
+/*
+<header class="primary-header">
+<img src="" alt="" class="" >
+<h1 class="primary-header__title">
+ simplify your CSS
+</h1>
+*/

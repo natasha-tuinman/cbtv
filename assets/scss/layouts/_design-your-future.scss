@@ -10,7 +10,7 @@
   .title4 {
     font-size:1.2rem;
     margin:.3em 0;
-    text-align: center;
+    text-align: center; 
   }
 
   .title3 {
@@ -35,7 +35,7 @@
   }
   
   .grid-item.block > * {
-    margin-top: 1rem;
+    // margin-top: 1rem;
   }
   
   .nb .grid-item {
@@ -58,11 +58,15 @@
     font-family: "Lastica";
     letter-spacing:0.75cqb;
   }
-  
+
   .text {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .small{
+    font-size: 0.7rem;
     padding: 0.5rem 0;
-    min-height: 120px; 
   }
   
   .image-container img {
@@ -76,8 +80,13 @@
     height: auto; /* Maintain aspect ratio */
   }
   
-  button {
-    font-size: 1rem;
+  .arrow {
+    margin-left: 60px;
+  }
+  
+  .click {
+    font-size: 0.8rem;
+    font-style:italic ;
   }
 
 }

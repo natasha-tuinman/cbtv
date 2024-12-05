@@ -1,7 +1,12 @@
 #what-is-cbtv {
 
+  .centered-image {
+    align-self: center;  /* Vertically center only this image */
+  }
+
   .grid-item {
-    align-self: center; /* Vertically center the content in the column */
+    // align-self: center; /* Vertically center the content in the column */
+    height: -webkit-fill-available;
   }
 
   /* For screens smaller than 800px, reduce the minimum size */
@@ -13,8 +18,12 @@
 
   .grid-title {
     font-size:1.5rem;
-    margin:.3rem 0;
-    padding-left: 2rem;
+    text-align: center;
+    align-self: center;
+  }
+
+  .grid-content {
+    align-self: center;
   }
 }
 

@@ -16,7 +16,7 @@
  
 {{ range (where .Site.Pages "Section" "home") }}
   {{ if gt .Params.weight 0 }}
-  <section id=".Params.id">
+  <section id="{{ .Params.id }}">
   {{  partial (printf "%s.html" .Params.id) . }}
   </section>
   {{ end }}

@@ -2,6 +2,7 @@
   <div class="grid-title">{{ .Title }}</div>
   <div class="subtitle">{{ .Params.subTitle }}</div>
 </div>
+
 <article class="grid-container">
   {{- $data := .Page.Params.data }} <!-- Access data from the current page context -->
 
@@ -15,9 +16,12 @@
     {{ if and $data (lt $index (len $data)) }}  <!-- Check if the index exists in data -->
       {{ $item := index $data $index }}  <!-- Get the corresponding item from data -->
       <div class="grid-item" style="background-image: url('{{ .RelPermalink }}');">
-        <div class="caps">{{ $item.title }}</div>
-        <div class="button">
-          <button>{{ i18n "watch-now" }}</button>
+        <div class="rows">
+          <div class="caps">{{ $item.title }}</div>
+          <div></div>
+          <div class="button">
+            <button>{{ i18n "watch-now" }}</button>
+          </div>
         </div>
       </div>
     {{ else }}

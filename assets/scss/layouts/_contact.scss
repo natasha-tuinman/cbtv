@@ -25,19 +25,19 @@ section#contact {
     grid-template-columns: repeat(1,1fr);
   }
 
+  
+  
   .img1, 
   .img4 {
     text-align: center;
-    img {
-      width: 30px;
-    }
   }
 
   .img2 {
     text-align: right;
-    img {
-      width: 25px;
-    }
+  }
+
+  .img4 img {
+    width:3rem;
   }
 
   .f-10 {
@@ -46,5 +46,9 @@ section#contact {
 
   .rem {
     font-size: .8rem;
+  }
+
+  .max {
+    width: 70%;
   }
 }
