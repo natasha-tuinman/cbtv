@@ -1,6 +1,8 @@
 <div class="title">{{ .Title }}</div>
-<article class="grid-container">
-  {{- range .Resources }}
-    <img src="{{ .RelPermalink }}" alt="Merchandise">
+<div class="grid">
+<div class="container">
+  {{- range $index, $v := .Resources }}
+    <img {{ if eq $index 4}}class="arrow"{{ end}} src="{{ .RelPermalink }}" alt="Merchandise">
   {{ end }}
-</article>
+</div>
+</div>

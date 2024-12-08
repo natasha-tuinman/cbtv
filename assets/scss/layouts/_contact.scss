@@ -1,54 +1,73 @@
 section#contact {
-
-  .grid-item {
-    grid-template-rows: repeat(3, 1fr);
-    background: none;
-    max-height: 80dvh;
-  }
+  text-align: center;
 
   .title {
-    font-family: "Lastica";
+    font-family: "Lastica"; 
+    letter-spacing:0.75cqb;
+    margin:1rem 0;
+  }
+
+  p {
+    font-family: "Lastica"; 
     letter-spacing:0.75cqb;
   }
 
+  p.subtitle {
+    font-family: initial; 
+    letter-spacing: initial;
+    padding: 0 2rem;
+    font-size: .8rem;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    grid-template-rows: 150px auto; /* Creates two rows with dynamic height */
+    gap: 20px; /* Adds spacing between grid items */
+    padding: 20px; /* Optional padding around the grid */
+    align-items: center; /* Vertically centers all grid items */
+  }
+  
+  @media (max-width: 468px) {
+    .main {
+      grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+    }
+    .stone {
+      visibility:hidden ; 
+    }
+  }
+
+  .email {
+    padding-top: 2.5rem; 
+  }
+  
+  .stone img {
+    max-width: 50px;
+    display: block;
+  }
+  
+  .address img {
+    max-width: 50px; /* Adjust the image size for address icons */
+    vertical-align: middle; /* Aligns images with text */
+  }
+  
   img {
     width: 1.5rem;
     padding: .5rem 0;
   }
 
-  .footer.grid-container,
-  .footer .grid-container {
-    grid-template-columns: repeat(2,1fr);
+  .img1 {
+    justify-self: right;
+    align-self: normal;
   }
 
-  .footer .grid-container:nth-child(2) {
-    grid-template-columns: repeat(1,1fr);
+  .img2, .img3 {
+    justify-self: center;
   }
 
-  
-  
-  .img1, 
   .img4 {
-    text-align: center;
-  }
-
-  .img2 {
-    text-align: right;
-  }
-
-  .img4 img {
+    justify-self: right;
     width:3rem;
   }
 
-  .f-10 {
-    font-size: .6rem;
-  }
-
-  .rem {
-    font-size: .8rem;
-  }
-
-  .max {
-    width: 70%;
-  }
 }

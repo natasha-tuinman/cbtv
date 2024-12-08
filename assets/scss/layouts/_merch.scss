@@ -1,14 +1,22 @@
 
 #merch {
-  grid-template-columns: none;
-  grid-template-rows: repeat(3, 1fr);
   
-  article {
+  .grid {
+    display: grid;
+    margin: 100px 0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Each column is at least 100px wide */
     border-top: .5rem solid var(--blue-2);
     border-bottom: .5rem solid var(--blue-2);
+    justify-self: center;
+    gap: 1rem;
   }
+
   .title {
-    padding-top: 1rem;
+    padding: 1rem 0;
     width: 100%;
     font-size: 1.25rem;
     text-align: center;
@@ -16,22 +24,13 @@
     letter-spacing:0.75cqb;
   }
 
-  .grid-container {
-    justify-self: center;
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .grid-container .week {
-    grid-template-rows: 1fr auto 1fr;  
-    /* Define three rows: top and bottom fixed, middle flexible */
-  }
-
   img {
     aspect-ratio: 1;
+    min-width: 100px;
+  }
+
+  .arrow {
+    min-width: 50px;
+    width: 50%;
   }
 }

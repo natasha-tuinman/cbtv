@@ -1,6 +1,6 @@
 {{ define "header" }}
    {{/* We can override any block in the baseof file be defining it in the template */}}
-  {{ partial "page-header.html" . }}
+  {{ partial "site-header.html" . }}
 {{ end }}
 
 {{ define "main" }}
@@ -52,19 +52,19 @@
     </header>
     <div class="">
       {{- .Content -}}
-      {{- partial "tags.html" . -}}
+      {{- partial "system/tags.html" . -}}
       <div class="">
       {{ if .Site.Config.Services.Disqus.Shortname }}
         {{ template "_internal/disqus.html" . }}
       {{ end }}
       {{ if .Site.Params.commentoEnable }}
-        {{- partial "commento.html" . -}}
+        {{- partial "system/commento.html" . -}}
       {{ end }}
       </div>
     </div>
 
     <aside class="w-30-l mt6-l">
-      {{- partial "menu-contextual.html" . -}}
+      {{- partial "system/menu-contextual.html" . -}}
     </aside>
 
   </article>

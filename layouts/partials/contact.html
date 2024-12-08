@@ -1,37 +1,31 @@
-<div class="grid-container">
-<div class="grid-item max">
-  <div ></div>
-  <div >
-    <div class="title">
-      have wisdom to share?
-      <br>
-      Connect with us!
-      </div>
-      <div class="f-10">
-      We welcome all creatives and experiences, share your knowledge through CBTV:
-    </div>
+<div class="title">
+  <p>have wisdom to share?</p>
+  <p>Connect with us!</p>
+  <p class="subtitle">We welcome all creatives and experiences, share your knowledge through CBTV:</p>
+</div>
+
+<div class="main">
+  <div class="email">Email us:</div>
+  <div class="address">
+    <img src="{{ trim .Params.emailImage "/" | absURL }}" alt="email"><br>
+    {{ .Params.email }}
   </div>
-  <div class="footer grid-container">
-    <div class="grid-container">
-      <div class="grid-item">
-        <div></div>
-        <div class="rem">Email us: </div>
-        <div></div>
-        <div class="rem">Message us: </div>
-      </div>
-      <div class="grid-item">
-        <div><img src="{{ trim .Params.emailImage "/" | absURL }}" alt="email"></div>
-        <div class="rem">{{ .Params.email }}</div>
-        <div><img src="{{ trim .Params.messageImage "/" | absURL }}" alt="Message"></div>
-        <div class="rem">{{ .Params.message }}</div>
-      </div> 
-    </div>
-    <div class="grid-container">
-      <div class="grid-item max"> 
-        <div class="img1"><img src="{{ .Params.image1 }}" alt=""></div>
-        <div class="img2"><img src="{{ .Params.image2 }}" alt=""></div>
-        <div class="img3"><img src="{{ .Params.image3 }}" alt=""></div>
-        <div class="img4"><img src="{{ .Params.image4 }}" alt=""></div>
-    </div>
+  <div class="stone img1">
+    <img src="{{ .Params.image1 }}" alt="Image 1">
+  </div>
+  <div class="stone img2">
+    <img src="{{ .Params.image2 }}" alt="Image 2">
+  </div>
+
+  <div class="email">Message us:</div>
+  <div class="address">
+    <img src="{{ trim .Params.messageImage "/" | absURL }}" alt="Message"><br>
+    {{ .Params.message }}
+  </div>
+  <div class="stone img3">
+    <img src="{{ .Params.image3 }}" alt="Image 3">
+  </div>
+  <div class="stone img4">
+    <img src="{{ .Params.image4 }}" alt="Image 4">
   </div>
 </div>

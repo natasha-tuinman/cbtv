@@ -15,11 +15,6 @@
 }
 */
 
-html {
-    color-scheme: dark light;
-    font-size: 1rem;
-}
-  
 @font-face {
     font-family: 'theSeasons';
     src: url('/fonts/the-seasons/The-Seasons-Regular.eot');
@@ -42,16 +37,20 @@ html {
   font-display: swap;
 }
 
+
+html {
+  color-scheme: dark light;
+}
+
 body {
-    // margin: 0; default
-    // line-height: 1.15; default
-    // -webkit-text-size-adjust: 100%; default
+    /* resets are done in reser.scss */
     background-color: var(--body-bg);
     color: var(--body-text);
     font-family: Arial, Helvetica, sans-serif;
     background-size: cover;
     background-position: center center;
-    height: 100vh; /* Ensure full viewport height */
+    min-height: 100vh; /* Ensure full viewport height as a minimum setting */
+    // font-size: 1rem;
 }
 
 
@@ -102,11 +101,8 @@ header {
 }
 
 section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   min-height: 100vh; // use as a backup
   min-height: 100dvh; // better for mobile 
-  gap: 1.25rem;
   background: var(--body-bg);
   border-top:1px solid var(--gray-5);
   padding: 0.5rem;
