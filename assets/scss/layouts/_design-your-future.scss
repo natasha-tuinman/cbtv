@@ -1,14 +1,12 @@
-
 #design-your-future {
+  display: block;
 
-  @media (max-width: 400px) {
-    .grid-container {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
-    }
+  .grid-container {
+    grid-auto-flow: row;
   }
-      
+
   .title4 {
-    font-size:1.2rem;
+    font-size:1.2rem; 
     margin:.3em 0;
     text-align: center; 
   }
@@ -23,7 +21,7 @@
   .grid-item {
     border: 0.8rem solid black;
     padding: 0;
-    align-self: normal;
+    align-self: center;
     text-align: center;     
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -34,9 +32,6 @@
     text-align: justify;
   }
   
-  .grid-item.block > * {
-    // margin-top: 1rem;
-  }
   
   .nb .grid-item {
   border: 0;
@@ -67,6 +62,9 @@
   .small{
     font-size: 0.7rem;
     padding: 0.5rem 0;
+    &.nopad {
+      padding:0;
+    }
   }
   
   .image-container img {

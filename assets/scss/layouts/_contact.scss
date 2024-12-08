@@ -22,9 +22,9 @@ section#contact {
   .main {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
-    grid-template-rows: 150px auto; /* Creates two rows with dynamic height */
-    gap: 20px; /* Adds spacing between grid items */
-    padding: 20px; /* Optional padding around the grid */
+    grid-template-rows: 150px auto; /* Creates first row with dynamic height */
+    gap: 1rem; /* Adds spacing between grid items */
+    padding: 1rem; /* Optional padding around the grid */
     align-items: center; /* Vertically centers all grid items */
   }
   

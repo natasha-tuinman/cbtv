@@ -17,10 +17,10 @@
       {{ $item := index $data $index }}  <!-- Get the corresponding item from data -->
       <div class="grid-item" style="background-image: url('{{ .RelPermalink }}');">
         <div class="rows">
-          <div class="caps">{{ $item.title }}</div>
+          <div class="image-title">{{ $item.title }}</div>
           <div></div>
           <div class="button">
-            <button>{{ i18n "watch-now" }}</button>
+          <button>{{ i18n "watch-now" }}</button>
           </div>
         </div>
       </div>

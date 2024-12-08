@@ -1,32 +1,38 @@
 #what-is-cbtv {
 
+  .grid-container {
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "bubbles title"
+      "bubbles content";
+  }
+
+  .bubbles {
+    grid-area: bubbles;
+  }
+
+ 
   .centered-image {
     align-self: center;  /* Vertically center only this image */
   }
 
-  .grid-item {
-    // align-self: center; /* Vertically center the content in the column */
-    height: -webkit-fill-available;
-  }
-
-  /* For screens smaller than 800px, reduce the minimum size */
+  /* For screens smaller than 600px, reduce the minimum size */
   @media (max-width: 600px) {
-    .flexible-grid >*:first-child {
+    .bubbles {
       display: none;
     }
   }
 
-  .grid-title {
+  .title { 
+    grid-area: title;
     font-size:1.5rem;
     text-align: center;
     align-self: center;
   }
 
-  .grid-content {
+  .content {
+    grid-area: content;
     align-self: center;
   }
 }
 
-section#design-your-future {
-  display: block;
-}

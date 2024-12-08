@@ -4,12 +4,10 @@ section#cbtv {
   background-repeat: no-repeat;      /* Prevent the image from repeating */
   background-position: center;      /* Center the image */  
   background-size: 100vw 100vh; /* Set the height to the screen height, ignore the aspect ratio */
-  
-  .grid-item {
-    grid-template-rows: repeat(2, 1fr);
-    background: none;
-    // height: 80dvh;
-  }
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  min-height: 100vh; /* Ensures the body fills the viewport */
+  padding: 0 2rem;
 
   .title {
     font-size:2rem;
@@ -22,9 +20,17 @@ section#cbtv {
   .footer {
     width: 100%;
     text-align: right;
+    align-self: center;
   }
+  
   img {
     height: 100px;
     width: auto;
+  }
+
+  .footer img {
+    width: 100%;  /* Make the image fill the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Avoid extra space at the bottom of images */
   }
 }
