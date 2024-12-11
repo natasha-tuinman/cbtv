@@ -17,19 +17,14 @@ section#cbtv {
     letter-spacing:0.75cqb;
   }
 
-  .footer {
+  .logo {
     width: 100%;
     text-align: right;
     align-self: center;
   }
-  
-  img {
-    height: 100px;
-    width: auto;
-  }
 
-  .footer img {
-    width: 100%;  /* Make the image fill the width of its container */
+  .logo img {
+    width: 30vw;  /* Make the image fill the width of its container */
     height: auto; /* Maintain the aspect ratio */
     display: block; /* Avoid extra space at the bottom of images */
   }

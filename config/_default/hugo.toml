@@ -55,6 +55,8 @@ username = "ourmaninindia"
 [params.social.bluesky]
 username = "ourmaninindia.dev"
 
+[build]
+useModules = false
 
 [[menu.main]]
   name = "What is CBTV"
