@@ -10,12 +10,17 @@ section#cbtv {
   padding: 0 2rem;
 
   .title {
-    font-size:2rem;
+    font-size:6rem;
     margin:.3rem 0;
     text-transform: uppercase;
     font-family: "Lastica";
     letter-spacing:0.75cqb;
-  }
+    }
+
+    .subtitle {
+  font-size: 2rem;
+  text-transform: uppercase;
+    }
 
   .logo {
     width: 100%;
@@ -24,8 +29,7 @@ section#cbtv {
   }
 
   .logo img {
-    width: 30vw;  /* Make the image fill the width of its container */
+    width: 10vw;  /* Make the image fill the width of its container */
     height: auto; /* Maintain the aspect ratio */
-    display: block; /* Avoid extra space at the bottom of images */
   }
 }

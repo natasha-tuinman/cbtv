@@ -5,13 +5,13 @@
   <div ></div>
   <div >
     <div class="title">{{ .Params.title }}</div>
-    <div>{{ .Content }}</div>
+    <div class="subtitle">{{ .Content }}</div>
   </div>
-  <div class="footer">
+  <div class="logo">
     <img src="{{ .Params.image }}" title="in Holland" alt="in Holland">
   </div>
 </section>
- 
+
 {{ range (where .Site.Pages "Section" "home") }}
   {{ if gt .Params.weight 0 }}
   <section id="{{ .Params.id }}">

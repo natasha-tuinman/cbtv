@@ -20,6 +20,7 @@
 
   .grid-item {
     border: 0.8rem solid black;
+    background-color: black;
     padding: 0;
     align-self: center;
     text-align: center;     
@@ -30,6 +31,7 @@
   .grid-item.block {
     display: block;
     text-align: justify;
+    background-color: var(--body-bg);
   }
   
   
@@ -74,7 +76,6 @@
   
   .grid-item img {
     max-width: 200px; /* Maximum width for the image */
-    width: 100%; /* Allows scaling down with the container */
     height: auto; /* Maintain aspect ratio */
   }
   

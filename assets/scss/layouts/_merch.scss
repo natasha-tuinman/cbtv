@@ -3,14 +3,8 @@
   
   .grid {
     display: grid;
-    margin: 100px 0;
-  }
-
-  .container {
-    display: grid;
+    margin: 100px 30px;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Each column is at least 100px wide */
-    border-top: .5rem solid var(--blue-2);
-    border-bottom: .5rem solid var(--blue-2);
     justify-self: center;
     gap: 1rem;
   }

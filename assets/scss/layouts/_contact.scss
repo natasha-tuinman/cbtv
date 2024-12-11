@@ -1,31 +1,32 @@
 section#contact {
-  text-align: center;
 
   .title {
     font-family: "Lastica"; 
     letter-spacing:0.75cqb;
     margin:1rem 0;
+    colspan: 3;
   }
 
   p {
-    font-family: "Lastica"; 
-    letter-spacing:0.75cqb;
+    // font-family: "Lastica"; 
+    // letter-spacing:0.75cqb;
   }
 
   p.subtitle {
     font-family: initial; 
     letter-spacing: initial;
-    padding: 0 2rem;
     font-size: .8rem;
+    margin-top: 1rem;
   }
 
   .main {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 150px auto; /* Creates first row with dynamic height */
     gap: 1rem; /* Adds spacing between grid items */
     padding: 1rem; /* Optional padding around the grid */
     align-items: center; /* Vertically centers all grid items */
+    padding: 0 20px;
   }
   
   @media (max-width: 468px) {
@@ -42,7 +43,7 @@ section#contact {
   }
   
   .stone img {
-    max-width: 50px;
+    width: 110px;
     display: block;
   }
   
@@ -53,7 +54,7 @@ section#contact {
   
   img {
     width: 1.5rem;
-    padding: .5rem 0;
+    padding-right: .5rem;
   }
 
   .img1 {
@@ -67,7 +68,6 @@ section#contact {
 
   .img4 {
     justify-self: right;
-    width:3rem;
   }
 
 }

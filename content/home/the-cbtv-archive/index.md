@@ -1,7 +1,7 @@
 ---
 title: "The CBTV Archive"
 id: "the-cbtv-archive"
-weight: 3
+weight: 4
 data:
   - title: "music production and marketing"
     image: archive-0.png

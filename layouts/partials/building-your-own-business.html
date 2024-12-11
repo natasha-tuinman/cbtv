@@ -1,0 +1,48 @@
+<div class="title">{{ .Params.title }}</div>
+<article class="grid-container nb">
+  <div class="grid-item">
+    {{ $image := .Resources.Get .Params.video }}  <!-- Retrieve the image resource -->
+    <img src= "{{ $image.RelPermalink }}" alt="That is her business">
+  </div>
+  <div class="grid-item block">
+    <div> </div>
+    <div class="grid-content">
+      {{ .Content }}
+    </div>
+    <div>
+      <p class="click">{{ i18n "click"}} {{ i18n "play"}}</p>
+      <div class="flex">
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="16" 
+          height="16" 
+          fill="currentColor" 
+          class="bi bi-play-circle" 
+          viewBox="0 0 16 16"> 
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/> 
+          <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/> 
+        </svg>
+        <svg 
+          class="arrow"
+          fill="#ffffff" 
+          viewBox="0 0 256 256" 
+          id="Flat" 
+          xmlns="http://www.w3.org/2000/svg" 
+          stroke="#ffffff" 
+          stroke-width="3.3280000000000003">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier"> 
+          <path d="M224,52a4.0002,4.0002,0,0,0-4,4,92.10478,92.10478,0,0,1-92,92H41.65723l41.17089-41.17188a3.99957,3.99957,0,0,0-5.65625-5.65625L29.17444,149.16943a4.00449,4.00449,0,0,0-.50134.6128c-.06488.09716-.10932.20214-.1648.30371a2.35141,2.35141,0,0,0-.3288.7915c-.03332.11328-.07714.22168-.10046.33936a4.01269,4.01269,0,0,0,0,1.5664c.02332.11768.0672.22608.10053.33936a3.90524,3.90524,0,0,0,.12646.40723,3.9707,3.9707,0,0,0,.20221.38427c.05554.10108.09991.20655.16486.30371a4.00449,4.00449,0,0,0,.50134.6128l47.99743,47.99755a3.99957,3.99957,0,0,0,5.65625-5.65625L41.65723,156H128A100.1127,100.1127,0,0,0,228,56,4.0002,4.0002,0,0,0,224,52Z"></path> 
+          </g>
+        </svg>
+      </div>
+    </div>
+   
+    <div>
+      <p class="small">Topic: {{ .Params.topic }}</p>
+      <p class="small nopad">Duration: {{ .Params.duration }}</p>
+    </div>
+  </div>
+  </div>
+</article>

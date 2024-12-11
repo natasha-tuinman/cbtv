@@ -1,5 +1,5 @@
 ---
 title: "CBTV merch"
 id: "merch"
-weight: 5
+weight: 6
 ---

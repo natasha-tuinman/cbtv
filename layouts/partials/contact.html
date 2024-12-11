@@ -1,14 +1,16 @@
-<div class="title">
+
+
+<div class="main">
+  <div class="title">
   <p>have wisdom to share?</p>
   <p>Connect with us!</p>
   <p class="subtitle">We welcome all creatives and experiences, share your knowledge through CBTV:</p>
 </div>
-
-<div class="main">
-  <div class="email">Email us:</div>
-  <div class="address">
-    <img src="{{ trim .Params.emailImage "/" | absURL }}" alt="email"><br>
-    {{ .Params.email }}
+<div></div>
+<div></div>
+  <div class="email">
+    <img src="{{ trim .Params.emailImage "/" | absURL }}" alt="email">
+    Email us: {{ .Params.email }}
   </div>
   <div class="stone img1">
     <img src="{{ .Params.image1 }}" alt="Image 1">
@@ -17,10 +19,10 @@
     <img src="{{ .Params.image2 }}" alt="Image 2">
   </div>
 
-  <div class="email">Message us:</div>
-  <div class="address">
-    <img src="{{ trim .Params.messageImage "/" | absURL }}" alt="Message"><br>
-    {{ .Params.message }}
+
+  <div class="email">
+    <img src="{{ trim .Params.messageImage "/" | absURL }}" alt="Message">
+      Email us: {{ .Params.message }}
   </div>
   <div class="stone img3">
     <img src="{{ .Params.image3 }}" alt="Image 3">

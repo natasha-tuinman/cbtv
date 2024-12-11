@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 id: "contact"
-weight: 4
+weight: 5
 subtitle: "We welcome all creatives and experiences, share your knowledge through CBTV:"
 title1: "have wisdom to share?"
 title2: "Connect with us!"
