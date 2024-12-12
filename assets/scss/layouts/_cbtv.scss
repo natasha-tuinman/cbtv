@@ -6,21 +6,18 @@ section#cbtv {
   background-size: 100vw 100vh; /* Set the height to the screen height, ignore the aspect ratio */
   display: grid;
   grid-template-rows: 1fr auto 1fr;
-  min-height: 100vh; /* Ensures the body fills the viewport */
   padding: 0 2rem;
 
   .title {
     font-size:6rem;
     margin:.3rem 0;
-    text-transform: uppercase;
-    font-family: "Lastica";
-    letter-spacing:0.75cqb;
-    }
+    text-align: left;
+  }
 
-    .subtitle {
-  font-size: 2rem;
-  text-transform: uppercase;
-    }
+  .subtitle {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
 
   .logo {
     width: 100%;

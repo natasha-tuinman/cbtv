@@ -1,12 +1,12 @@
-<div class="title">{{ .Params.title }}</div>
 <article class="grid-container nb">
+  <div class="title">{{ .Params.title }}</div>
   <div class="grid-item">
     {{ $image := .Resources.Get .Params.video }}  <!-- Retrieve the image resource -->
     <img src= "{{ $image.RelPermalink }}" alt="That is her business">
   </div>
   <div class="grid-item block">
     <div> </div>
-    <div class="grid-content">
+    <div class="content">
       {{ .Content }}
     </div>
     <div>

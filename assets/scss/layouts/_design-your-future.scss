@@ -1,59 +1,36 @@
 #design-your-future {
-  display: block;
-
+  
   .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    // grid-template-rows: 50px auto; /* First row is 50px high, second row adjusts automatically */
     grid-auto-flow: row;
   }
-
-  .title4 {
-    font-size:1.2rem; 
-    margin:.3em 0;
-    text-align: center; 
+   
+  .title {
+    grid-column: 1 / -1; /* Span from the first column to the last */
+    margin-bottom: 50px;
   }
 
-  .title3 {
-    font-size:2em;
-    margin:.3em 0;
-    text-align: center;
-    text-transform: uppercase;
+  article {
+    background-color: var(--black);
   }
 
   .grid-item {
-    border: 0.8rem solid black;
-    background-color: black;
+    width: 100%;
     padding: 0;
     align-self: center;
-    text-align: center;     
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
-  
-  .grid-item.block {
-    display: block;
-    text-align: justify;
-    background-color: var(--body-bg);
-  }
-  
-  
-  .nb .grid-item {
-  border: 0;
+    justify-content: center;
+    //display: grid;
+    //grid-template-rows: auto 1fr auto;
   }
   
   .grid-title {
     font-size:1rem;
-    margin:.3rem 0;
+    padding: 1rem 0;
     color: var(--pink-4);
     line-height: 1;
-    min-height: 50px;   
-  }
-  
-  .title {
-    font-size:2rem;
-    margin:.3rem 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Lastica";
-    letter-spacing:0.75cqb;
+    height: 50px;
+    text-align: center;    
   }
 
   .text {
@@ -61,22 +38,12 @@
     padding: 0.5rem;
   }
 
-  .small{
+  .small {
     font-size: 0.7rem;
     padding: 0.5rem 0;
     &.nopad {
       padding:0;
     }
-  }
-  
-  .image-container img {
-    width: 300px;
-    object-fit: cover; /* Cover the container while maintaining aspect ratio */
-  }
-  
-  .grid-item img {
-    max-width: 200px; /* Maximum width for the image */
-    height: auto; /* Maintain aspect ratio */
   }
   
   .arrow {

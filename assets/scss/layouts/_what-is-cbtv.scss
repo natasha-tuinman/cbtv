@@ -11,7 +11,6 @@
     grid-area: bubbles;
   }
 
- 
   .centered-image {
     align-self: center;  /* Vertically center only this image */
   }
@@ -25,10 +24,7 @@
 
   .title { 
     grid-area: title;
-    font-size: 2rem;
-    text-align: center;
     align-self: end;
-    font-family: lastica;
   }
 
   .content {

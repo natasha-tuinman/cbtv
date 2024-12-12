@@ -1,0 +1,486 @@
+.stacked {
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.stacked > * {
+  grid-column:1/-1;
+  grid-row:1/ -1;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: dense;
+  gap: 1rem; 
+  grid-template-columns: repeat(auto-fit, minmax(100%,180px), 1fr);
+  grid-auto-rows: 120px auto auto; // assuming 3 rows
+  container-type: inline-size;
+}
+
+.product {
+  --_padding: 1rem;
+
+  grid-row: span 3; // again the 3 rows
+  display: grid;
+  grid-template-rows: subgrid;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.product[data-featured="true"]{
+  background-color: purple;
+  @container (min-width: 750) {
+    background-color: steelbue; 
+    grid-column: span 2;
+    grid-template-columns: subgrid;
+
+    > img {
+      grid-column: span 2; // or 1 / -1;
+    }
+  }
+}
+
+.product__description {
+  display: block;
+  margin-bottom:vat(--_padding);
+}
+
+.example > .container {
+  container-type: inline-size;
+}
+
+.container[data-type="wide"]{
+  max-width: 850px;
+}
+
+.example p {
+font-size: 5cqi;
+}
+/*---- */
+body {
+  background-color: #f9f9f9;
+}
+.element:hover{
+  box-shadow: 12px 12px 12px rgba(0.0.0.0.1),
+  -10px -10px10px white inset; 
+  // the inset makes it look as if it is inside
+}
+
+<input type="checkbox" id="mycheckbox">
+<label for="mycheckbox">My label</label>
+
+.container {
+  display: none;
+}
+#mycheckbox: checked ~ .container{
+  display: block;
+}
+
+.conatiner {
+  width: clamp(400px, 50vw, 800px);
+}
+
+.glass{
+  backdrop-filter: blur(10px);
+}
+
+.button:not(:first-child){
+  background-color: red;
+}
+
+button:has(svg){
+  padding;right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  fill: white;
+}
+
+<select>
+<option value="light">Light mode</option>
+<option value="dark">Dark mode</option>
+</select>
+
+body:has(option[value="dark"]:checked){
+  --background: black;
+  --text-color: white;
+}
+
+// gradient text
+h1 {
+  background: linear-gradient(to right,red, blue);
+  background-clip: text;
+  color: transparent;
+}
+
+.dropdown {
+  display:none;
+}
+.my-button:focus-within .dropdown {
+  display: flex;
+}
+// add counter to a heading
+:root{
+  counter-reset: headings;
+}
+h2 {
+  counter-increment: headigs;
+}
+h2::before {
+  content:counter(headings);
+  background-color: #0071FF;
+  border-radius: 2px;
+  padding: .15em0;
+  width: 40px;
+  text-align: center;
+}
+// wrap pages
+.wrapper {
+display: flex;
+gap: 1rem;
+width: 300px;
+overflow-x: scroll;
+scroll-snap-type:xmandatory;
+}
+.card {
+  scroll-snap-align: center;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  flex-shrink: 0;
+  width: 300px;
+  background-color: white;
+  border-radius: 14px;
+  text-align: center;
+}
+
+//focus on buttons
+<button class="focus-visible">focus</button> {}
+
+button {
+  font-size:200%;
+  outline-offset: 5px;
+
+  &.focus:focus{
+    outline: 5px solid Highlight;
+  }
+
+  &.focus-visible:focus-visible {
+    outline: 5px solid Highlight;
+  }
+}
+
+form: focus-within {
+  box-shadow: 0 0 1rem hsl(0 50% 50% /1);
+}
+
+input, textarea {
+  caret-color: hotpink;
+}
+
+@media (hover){
+  button {
+    position: relative;
+    display: grid;
+    place-content: center;
+    inline-size: 10ch;
+    aspect-ratio: 1;
+    border:none;
+  }
+  & >label {
+    position: absolute;
+    inset-block-start: -3ch;
+    ;inset-inline: 0;
+    opacity: 0;
+  }
+}
+
+// listing spacing 
+.hotel-list {
+  width:min(100% - 3rem, 800px);
+  margin-inline: auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.hotel-listing {
+  display: grid;
+  gap:1.5rem;
+  grid-template-columns: 200pxfit-content(40ch) 1fr;
+}
+
+@layer support,demo;
+
+@layer demo {
+  figure {
+    inline-size: 50vw;
+    block-size: 50vh;
+
+    > img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@layer demo{
+  div {
+    background: blue;
+    block-size:20vw;
+    &.square {
+      aspect-ratio:var(--ratio-square);
+    }
+    &.landscape {
+      aspect-ratio: var(--ratio-landscape);
+    }
+  }
+}
+
+// accent colors
+:root {
+  accent-color: deeppink;
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    accent-color: hsl(100 100% 65%);
+  }
+}
+
+.overlay {
+  border-image: fill 0 linear-gradient(#0003, #000);
+}
+
+// scroll from header menu
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
+}
+nav{
+  position: sticky;
+  top: 0;
+  padding: 3rem;
+  background:hsl(0 0 20%);
+}
+.horizontal-scroller {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 60vw;
+  max-width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  > * {
+    scroll-margin: 5rem;
+    scroll-snap-align: start;
+  }
+  > :nth-child(odd){
+    background: hsl(0 0% 100% / 0.15)
+  }
+}
+
+//full screen slideshow
+html {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  min-block-size: 100vh;
+  scroll-snap-stop: always;
+}
+
+// part 2 of the scroll
+// https://www.youtube.com/watch?v=opHu7HvFM60
+body {
+  min-height: 500vh;
+}
+.basic-snap-y {
+  overflow-y:auto;
+  scroll-snap-type: y mandatory;
+
+  & > * {
+
+  }
+}
+
+//use display to add a gap
+
+.card {
+  display: grid;
+  gap: 1rem;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+//columns for articles
+.columns{
+  columns:200px 3;
+  column-rule:1px dotted red;
+  gap: 3rem;
+}
+
+.intro { // over full widthof page
+  column-span: all
+}
+
+p {
+  text-wrap: pretty;
+}
+
+// drop shadows on svg
+svg {
+  &.box{
+    box-shadow:0 5px 5px red;
+  }
+  &.drop {
+    filter: drop-shadow(0 5px 5px red);
+  }
+}
+
+.box {
+  transform: matrix3d(
+   0.5, -0.2, 0 -0.000001,
+   0.01, 1,0,0.00005,
+   0, 0, 0, 1, 0,
+   1, 1, 0, 1);
+}
+
+// backdrop filter
+h1 {
+  backdrop-filter: blur(5px);
+  // backdrop-filter:brightness(200%);
+  // backdrop-filter:saturate(0%);
+  // backdrop-filter:contrast(50%);
+  // or combined options
+  background-color: hsl(0 0% 100% / 0.4);
+  position: fixed;
+  margin: auto;
+  inset: 0;
+}
+
+// control proper links
+:any-link {
+  font-size: 200%;
+}
+
+// ul without any li
+<div class="all-tasks">
+<h2 class="taks-list-title">My lists</h2>
+<ul class="task-list" data-lists></ul>
+</div>
+
+.task-list {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  list-style: circle;
+  background: hsl(0 0% /0.2);
+  padding:1rem;
+  padding-left: 2rem;
+  margin-right: 2rem;
+}
+
+.task-list:empty{
+  display: none;
+}
+//listing
+p:first-of-type {}
+
+li:not(:first-of-type) {
+  border-bottom: 1px solid lime;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+// happy list
+<ul>
+<li>Pong</li>
+<li>Oregon Trail</li>
+<li>Fantasy</li>
+</ul>
+
+@counter-style happy-list {
+  system: cyclic;
+  symbols: "" "";
+  suffix: "  ";
+}
+
+ul {
+  list-style-type: happy-list;
+  display: grid;
+  grid-template-columns: 1fr1fr;
+  gap: .5ch 3rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+// inset 
+<div class="parent">
+<div class="child"></div>
+</div>
+
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  inset: 100px 0px 10px 50px;
+  // inset-inline: 100px;
+  // inset-block: 50px; 
+  //or you couldod this:
+  inset: 0;
+  margin: auto;
+  width: 50px;
+  aspect-ratio: 1;
+
+  background-color: hsl(340 90% 50%);
+}
+
+/*------*/
+
+:Zone.Identifier files may be an issue with the `.git` repository metadata on your local system. 
+
+Here's how you can resolve the issue:
+
+---
+
+### 1. **Remove Corrupted References**
+   - Check your local `.git` folder for incorrect or corrupted references.
+     ```bash
+     cd your-repo-folder
+     ls -la .git/refs/heads/
+     ```
+   - If you see an extra file like `main:Zone.Identifier`, remove it:
+     ```bash
+     rm .git/refs/heads/main:Zone.Identifier
+     ```
+
+---
+
+### 2. **Clean Up the Repository**
+   - Run the following commands to clean up and verify the integrity of the repository:
+     ```bash
+     git gc --prune=now
+     git fsck
+     ```
+   - If there are dangling objects or bad references, `git fsck` will display them. Use the output to identify problematic files.
+
+---
+
+### 3. **Re-fetch the Repository**
+   - Forcefully fetch the latest updates from the remote repository to ensure everything is consistent:
+     ```bash
+     git fetch --all --prune
+     git pull origin main
+     ```
+
+---
+
+### Prevent Future Issues:
+- Avoid creating files or filenames with special characters (`:` is invalid on Windows).
+- Use tools like `gitignore` to prevent irrelevant metadata files from entering your repository.

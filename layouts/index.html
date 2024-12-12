@@ -12,7 +12,7 @@
   </div>
 </section>
 
-{{ range (where .Site.Pages "Section" "home") }}
+{{ range (where .Site.Pages "Section" "cbtv") }}
   {{ if gt .Params.weight 0 }}
   <section id="{{ .Params.id }}">
   {{  partial (printf "%s.html" .Params.id) . }}

@@ -8,7 +8,7 @@ Styling has been done using SCSS. Style rules are the foundation of Sass, just l
 
 Very little scripting has been done and all in vanilla JavaScript. This is mainly for the menu button to work and the cookie consent popup.
 
-Content is all stored in a folder called *content/home* with some 6 subfolders each with a markdown file representing a section on the index page. As this is a single page site, each section has its own id based on the title of that section. With Hugo one could also easily have multiple short pages each with a distinct url rather than this single page site.
+Content is all stored in a folder called *content/cbtv* with some 6 subfolders each with a markdown file representing a section on the index page. As this is a single page site, each section has its own id based on the title of that section. With Hugo one could also easily have multiple short pages each with a distinct url rather than this single page site.
 
 ## Version
 ```
@@ -35,7 +35,7 @@ npm run deploy
 ---
 
 ## Contents
-The data is stored in *Content/en/home* in some 7 markdown files, each representing a page. As this is a single page site, each ‘page’ has it’s own id based on the title. 
+The data is stored in *Content/cbtv* in some 7 markdown files, each representing a page. As this is a single page site, each ‘page’ has it’s own id based on the title. 
 
 ## CSS styling
 Create the scss files required in 'assets/scss' where main.scss is the master file which calls all the required stylesheets. 'custom.scss' is the main file for all the styling. 

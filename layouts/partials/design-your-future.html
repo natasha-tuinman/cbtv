@@ -1,21 +1,16 @@
-<div class="title">{{ .Title }}</div>
-
 <div class="grid-container">
+  <div class="title">{{ .Title }}</div>
   {{ range .Params.images }}
-  <article class="grid-container">
+  <article class="Xgrid-container">
     <div class="grid-item">
-      <div>
-        <img src="./home/design-your-future/{{ .photo }}" alt="{{ .title }}">
-      </div>
-      <div class="grid-title">
-        {{ .title }}
-      </div>
-      <div class="text">
-        {{ .content }}
-      </div>
+        <img src="./cbtv/design-your-future/{{ .photo }}" alt="{{ .title }}">
+    </div>
+    <div class="grid-title">
+      {{ .title }}
+    </div>
+    <div class="text">
+      {{ .content }}
     </div>
   </article>
 {{ end }}
 </div>
- 
-</article>

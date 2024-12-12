@@ -1,11 +1,7 @@
-<div>
-  <div class="grid-title">{{ .Title }}</div>
-  <div class="subtitle">{{ .Params.subTitle }}</div>
-</div>
+{{- $data := .Page.Params.data }} <!-- Access data from the current page context -->
 
 <article class="grid-container">
-  {{- $data := .Page.Params.data }} <!-- Access data from the current page context -->
-
+  <div class="title">{{ .Params.title }}</div>
   {{- range .Resources }}
     {{ $str := .Name }}
     {{ $number := replaceRE "[^0-9]" "" $str }} <!-- Extract number from image name -->
@@ -32,30 +28,3 @@
     {{ end }}
   {{- end }}
 </article>
-
-<div class="bg flex-container">
-  <div class="blog">{{ .Params.blog }}</div>
-  <ul class="item">
-    {{- range .Params.sidemenu }}
-    <li><a href="#">{{ .item }}</a></li>
-    {{- end }}
-  </ul>
-
-  <div class="item photo">
-    <img class="circle" src="{{ .Params.image }}" alt="{{ .Params.imageName }}">
-    <div class="name">{{ .Params.imageName }}</div>
-  </div>
-  <div class="item normal">
-  <div class="grid-container week">
-
-    <div class="header">{{ .Params.colTitle }}</div>
-    <div class="text">{{ .Content }}</div>
-    <div class="footer">{{ i18n "read-more" }}
-      <br>
-      <a href="#">{{ i18n "click" }}</a>
-      {{ i18n "continue" }}
-    </div>
-
-    </div>
-  </div>
-</div>
