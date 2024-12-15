@@ -5,7 +5,7 @@
     grid-template-columns: repeat(2,1fr); 
     grid-template-rows: auto auto auto;
     align-items: start;
-    width: calc(100% - 4rem);
+    width: 100%; // or calc(100% - 4rem);
   }
 
   @media (max-width: 650px) {
@@ -19,6 +19,7 @@
     align-items: center;
     min-height: 50px; 
     text-align: center;
+    align-self: center;
   }
 
   .top {

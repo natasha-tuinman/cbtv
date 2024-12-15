@@ -17,7 +17,7 @@
   .title { 
     text-align: center; /* Center the text */
     margin: 1rem 0;
-  }
+  } 
 
   .centered-image {
     align-self: center;  /* Vertically center only this image */
@@ -26,6 +26,10 @@
   .top {
     grid-column: span 2; 
   }
+
+.second {
+  display: none;
+}
 
   /* For screens smaller than 600px, reduce the minimum size */
   @media (max-width: 800px) {

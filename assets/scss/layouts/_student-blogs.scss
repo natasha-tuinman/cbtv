@@ -31,6 +31,7 @@
     gap: var(--gap); 
     width: 100%;
     background: var(--body-bg);
+    min-height: 90vh;
   }
 
   .item {
@@ -41,6 +42,10 @@
   .item:first-child {
     background: var(--menu-bg);
     // align-self: flex-start; // avoid the color being stretched
+  }
+
+  .item:nth-child(3) {
+    padding-right: 3rem;
   }
 
   /* the column with the image */
@@ -121,6 +126,7 @@
     text-align: center;
     font-style: italic;
     font-weight: bold;
+    font-size: 2rem;
     padding: 1rem 0;
     position: relative;
   }
@@ -137,6 +143,7 @@
     margin-top: auto; /* Push footer to the bottom */
     flex-grow:1;
     background-color: var(--body-bg);
+    padding-right: 2rem;
   }
   
   .item:last-child { 
@@ -156,6 +163,9 @@
     .item:nth-child(2), 
     .item:nth-child(3) {
       display: none;
+    }
+    .header {
+    font-size: 1rem;
     }
    
   }
