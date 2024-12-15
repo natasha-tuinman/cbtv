@@ -1,66 +1,81 @@
 section#contact {
 
-  p {
-    // font-family: "Lastica"; 
-    // letter-spacing:0.75cqb;
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    grid-column: 1 / -1; 
+    padding-top: 10px;
+  }
+  
+  .top {
+    grid-column: 1 / -1;
   }
 
   p.subtitle {
-    font-family: initial; 
-    letter-spacing: initial;
+    font-family: inherit;
+    text-transform: none; 
     font-size: .8rem;
-    margin-top: 1rem;
   }
 
-  .main {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: 150px auto; /* Creates first row with dynamic height */
-    gap: 1rem; /* Adds spacing between grid items */
-    padding: 1rem; /* Optional padding around the grid */
-    align-items: center; /* Vertically centers all grid items */
-    padding: 0 20px;
+  .main-content {
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    flex-grow: 1;
+    gap: var(--gap); 
   }
-  
-  @media (max-width: 468px) {
-    .main {
-      grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
-    }
-    .stone {
-      visibility:hidden ; 
-    }
+
+  .row {
+    display: flex; /* Create a row for the columns */
+    justify-content: space-between; 
+    gap: var(--gap);
   }
 
   .email {
     padding-top: 2.5rem; 
   }
   
-  .stone img {
-    width: 110px;
-    display: block;
+  .stone-1 {
+    text-align: right;
+    img {
+      width: 60px;
+    }
+  }
+  .stone-2 {
+    img {
+      width: 110px;
+      text-align: left;
+    }
+  }
+  .stone-3 {
+    text-align: right;
+    img {
+      width: 80px;
+    }
+  }
+  .stone-4 {
+    text-align: right;
+    img {
+      width: 80px;
+    }
   }
   
-  .address img {
-    max-width: 50px; /* Adjust the image size for address icons */
-    vertical-align: middle; /* Aligns images with text */
-  }
-  
-  img {
+  .mail img {
     width: 1.5rem;
     padding-right: .5rem;
   }
 
-  .img1 {
-    justify-self: right;
-    align-self: normal;
-  }
-
-  .img2, .img3 {
-    justify-self: center;
-  }
-
-  .img4 {
-    justify-self: right;
+  @media (max-width: 600px) {
+    [class^="stone"] {
+      display: none ;
+    }
+    .row {
+      justify-content: space-between;
+    }
+   
   }
 
 }

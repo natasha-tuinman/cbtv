@@ -1,16 +1,17 @@
-<div class="grid-container">
+<div class="container">
   <div class="title">{{ .Title }}</div>
   {{ range .Params.images }}
-  <article class="Xgrid-container">
-    <div class="grid-item">
+  <article>
+    <div class="item">
         <img src="./cbtv/design-your-future/{{ .photo }}" alt="{{ .title }}">
     </div>
-    <div class="grid-title">
-      {{ .title }}
+    <div class="title">
+      <a href="{{ .url }}" alt="{{ .title }}">{{ .title }}</a>
     </div>
     <div class="text">
       {{ .content }}
     </div>
   </article>
-{{ end }}
+  {{ end }}
+  {{ partial "top-of-page" . }}
 </div>

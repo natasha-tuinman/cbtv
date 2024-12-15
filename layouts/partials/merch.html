@@ -1,6 +1,10 @@
-<div class="title">{{ .Title }}</div>
-<div class="grid">
+<div class="container">
+  <div class="title">{{ .Title }}</div>
   {{- range $index, $v := .Resources }}
-    <img {{ if eq $index 4}}class="arrow"{{ end}} src="{{ .RelPermalink }}" alt="Merchandise">
+  <img 
+    class="{{ if eq $index 3}}arrow{{else }}image{{ end }}" 
+    src="{{ .RelPermalink }}" 
+    alt="Merchandise">
   {{ end }}
+  {{  partial "top-of-page" . }}
 </div>

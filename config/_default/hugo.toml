@@ -39,11 +39,12 @@ filename = "sitemap.xml"
 [params]
 text_color = ""
 author = ""
-favicon = ""
+favicon = "favicon.ico"
 site_logo = ""
 description = "Where creativity meets opportunity"
 recent_posts_number = 5
 featured_image= 'images/home.png'
+top_of_page= "images/up-arrow.png"
 
 [params.social.facebook]
 username = "ourmaninindia"

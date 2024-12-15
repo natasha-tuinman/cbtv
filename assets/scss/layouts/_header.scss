@@ -9,9 +9,6 @@ header {
       color: var(--body-text);
     }
 
-    ul {
-      list-style: none;
-    }
     div {
       display: flex;
       flex-direction: row;
@@ -50,28 +47,7 @@ header {
       margin-bottom: 1px;
       font-weight: bold;
     }
-    ul {
-      list-style-type: disc;  
-      width: 150px;   /* Set a specific width (adjust as needed) */
-      padding-left: 0;  
-      margin-left: 3rem;
-      background-color: var(--anchor-hover);
-    }
-
-    ul li {
-      margin-left: 2rem; 
-      color: white;
-      padding: 0.5rem 0;
-    }
-    ul li a {
-      //margin-left: 2rem;
-      background-color: var(--anchor-hover);
-      color: white;
-      text-decoration: none;
-    }
-    ul li a:hover {
-      text-decoration: none;
-    }
+   
     label {
       display: none;
     }

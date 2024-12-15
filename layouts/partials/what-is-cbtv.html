@@ -1,21 +1,31 @@
-<article class="grid-container" >
+{{ $image := .Resources.Get .Params.image }}  <!-- Retrieve the image resource -->
+
+<div class="container">
   <div class="bubbles"> 
-    {{ $image := .Resources.Get .Params.image }}  <!-- Retrieve the image resource -->
-    {{ if $image }}
+    {{- range $index, $v := .Resources }}
+    {{- if eq $index 0 }}
       <img 
-        src="{{ $image.RelPermalink }}" 
+        src="{{ .RelPermalink }}" 
         title="Bubbles" 
         alt="a bubble going up" 
-        class="centered-image"
-      >
-    {{ else }}
-      <p>{{ .Params.image }} not found</p>
+        class="centered-image" >
+    {{ end }}
     {{ end }}
   </div>
-  <div class="title">
-    {{- .Title -}}
+  <div>
+    <div class="title">{{- .Title -}}</div>
+    <div class="content">{{- .Content -}}</div>
+    <div class="bubbles second"> 
+      {{- range $index, $v := .Resources }}
+      {{- if eq $index 0 }}
+        <img 
+          src="{{ .RelPermalink }}" 
+          title="Bubbles" 
+          alt="a bubble going up" 
+          class="centered-image" >
+      {{ end }}
+      {{ end }}
+    </div>
   </div>
-  <div class="content">
-    {{- .Content -}}
-  </div>
-</article>
+  {{  partial "top-of-page" . }}
+</div>

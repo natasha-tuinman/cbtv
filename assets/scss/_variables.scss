@@ -13,6 +13,9 @@ Open Props, see https://open-props.style/ */
   --gap: 1rem;
   --svg-fill-color: white;
   --svg-stroke-color: black;
+  --li: darkmagenta;
+  --anchor: lime;
+  --gradient: linear-gradient(90deg, #832eff, #fe4ff2);
 }
 
 :where(html) {

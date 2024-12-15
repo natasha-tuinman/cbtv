@@ -1,22 +1,24 @@
+<div class="container">
+
 <div class="header">
   <div class="title">{{ .Title }}</div> 
-  <div class="subtitle">{{ .Params.subtitle }}</div> 
+  <div>{{ .Params.subtitle }}</div> 
 </div>
 
-<div class="item">
+<div class="item-1">
     <div class="step">{{ i18n "step" }} 1</div>
     <div class="circle">{{ .Params.step0 }}</div>
 </div>
 
-<div class="item item1">
+<div class="item-2 item1">
   <div class="step">{{ i18n "step" }} 2</div>
   <div class="circle">{{ .Params.step1 }}</div>
 </div>
 
-<div class="item">
+<div class="item-3">
   <div class="step">{{ i18n "step" }} 3</div>
   <img src="{{ trim $.Params.upload "/" | absURL }}" alt="upload">
   <div class="upload"> {{ .Params.step2 }}</div>
 </div>
-
-<div class="footer">{{ .Params.footer }}</div> 
+{{  partial "top-of-page" . }}
+</div>

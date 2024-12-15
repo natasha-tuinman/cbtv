@@ -1,21 +1,39 @@
 
 #merch {
   
-  .grid {
+  .container {
     display: grid;
-    margin: 100px 30px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Each column is at least 100px wide */
-    justify-self: center;
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+    justify-items: center;
+  }
+
+  @media (max-width: 780px) {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+    }
+  }
+  
+  .title {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .top {
+    grid-column: 1 / -1;
+    img {
+      aspect-ratio: 1;
+      width: 30px;
+    }
   }
 
   img {
-    aspect-ratio: 1;
-    min-width: 100px;
+    max-width: 200px;
   }
 
   .arrow {
-    min-width: 50px;
-    width: 50%;
+    max-width: 100px;
+    justify-self: center;
   }
 }

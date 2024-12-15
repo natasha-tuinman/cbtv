@@ -1,33 +1,41 @@
+<div class="container">
 
-
-<div class="main">
   <div class="title">
-  <p>have wisdom to share?</p>
-  <p>Connect with us!</p>
+    <p>have wisdom to share?</p>
+    <p>Connect with us!</p>
+  </div>
+    
   <p class="subtitle">We welcome all creatives and experiences, share your knowledge through CBTV:</p>
-</div>
-<div></div>
-<div></div>
-  <div class="email">
-    <img src="{{ trim .Params.emailImage "/" | absURL }}" alt="email">
-    Email us: {{ .Params.email }}
-  </div>
-  <div class="stone img1">
-    <img src="{{ .Params.image1 }}" alt="Image 1">
-  </div>
-  <div class="stone img2">
-    <img src="{{ .Params.image2 }}" alt="Image 2">
+  
+
+  <div class="main-content">
+    <!-- first row -->
+    <div class="row">
+      <div class="mail">
+        <img src="{{ trim .Params.emailImage "/" | absURL }}" alt="email">
+        {{ i18n "email" }} : {{ .Params.email }}
+      </div>
+      <div class="stone-1 img1">
+        <img src="{{ .Params.image1 }}" alt="Image 1">
+      </div>
+      <div class="stone-2 img2">
+        <img src="{{ .Params.image2 }}" alt="Image 2">
+      </div>
+    </div>
+    <!-- second row -->
+    <div class="row">
+      <div class="mail">
+        <img src="{{ trim .Params.messageImage "/" | absURL }}" alt="Message">
+          {{ i18n "message" }} : {{ .Params.message }}
+      </div>
+      <div class="stone-3 img3">
+        <img src="{{ .Params.image3 }}" alt="Image 3">
+      </div>
+      <div class="stone-4 img4">
+        <img src="{{ .Params.image4 }}" alt="Image 4">
+      </div>
+    </div>
   </div>
 
-
-  <div class="email">
-    <img src="{{ trim .Params.messageImage "/" | absURL }}" alt="Message">
-      Email us: {{ .Params.message }}
-  </div>
-  <div class="stone img3">
-    <img src="{{ .Params.image3 }}" alt="Image 3">
-  </div>
-  <div class="stone img4">
-    <img src="{{ .Params.image4 }}" alt="Image 4">
-  </div>
+  {{  partial "top-of-page" . }}
 </div>

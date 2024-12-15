@@ -1,30 +1,39 @@
 #the-cbtv-archive {
  
-  .grid-container {
-   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-   // grid-template-rows: 50px auto; /* First row is 50px high, second row adjusts automatically */
-    grid-auto-flow: row;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between; 
+    grid-auto-flow: dense; 
   }
-  
+
+  /* Media query for smaller screens */
+  @media (max-width: 760px) {
+    .container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    }
+  }
+
   .title {
-    grid-column: 1 / -1; /* Span from the first column to the last */
-    margin-bottom: 50px;
-  }
-
-  .bg {
-    background-color: var(--menu-bg); 
-    height: inherit; 
-  }
-
-  .grid-item {
-    background-size: cover; 
-    height: 300px;
-    border-radius: 30px;
+    grid-column: 1 / -1;
+    text-align: center;
   }
 
   .item {
-    flex: 1; /* Each item takes up equal space */
     padding: 10px; /* Optional: Add some padding for spacing inside the items */
+    background-repeat: no-repeat;
+    background-size: cover; /* Cover the entire element */
+    height: 50vh;
+    text-align: center;
+    // min-width: 200px; /* Optional: fixes item size */
+  }
+
+  .rows {
+    display: flex;
+    flex-direction: column; /* Arrange items in a vertical column */
+    justify-content: space-between; /* Push items to the top and bottom */
+    height: 100%; /* Full height of the image */
   }
 
   button {
@@ -33,90 +42,19 @@
     border: none;
     font-size: 0.8rem;
     color: var(--white);
-    letter-spacing: 0.04em;
-  }
-
-  button:hover {
-    font-weight: bold;
-    text-decoration: underline;
-    letter-spacing: normal;
-  }
-
-  .button {
-    justify-self: center;
-    align-content: center;
-  }
-
-  button, 
-  .blog {
-    background: linear-gradient(90deg, #832eff, #fe4ff2);
-  }
-
-
-
-  .image-title {
-    text-transform: uppercase;
-    font-size: .9rem;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .photo {
-    text-align: center;
-    padding: 1rem;
-    background-color: var(--body-bg); 
-    & .name {
-      padding-top:1rem;
+    background: var(--gradient);
+    align-self: center;
+    &:hover {
+      background-color: #832eff;
     }
   }
 
-  
-  .rows {
-    display: grid;
-    grid-template-rows: 1fr auto 1fr;
-    grid-auto-flow: row;
-    gap: 1rem;
-    height: inherit;
+  .image-title {
+    text-transform: uppercase;
+    margin-top: 1rem;
   }
 
-  .outer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-    gap: 1rem; /* Space between columns */
-  }
-  
-  .grid-container2 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto 1fr auto;
-    gap:1rem;
-  }
-
-  .inner-grid {
-    display: grid;
-    gap: 0.5rem; /* Space between rows */
-    place-items: center;
-    height: inherit;
-    text-align: center;
-    isolation: isolate;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto 1fr auto;
-    // grid-template-areas: "stack";
-  }
-  
-  .inner-grid > * {
-    // grid-area: stack;
-    grid-row: 1 / -1;
+  .top {
     grid-column: 1 / -1;
   }
-
-  .inner-grid > img {
-    z-index: -1;
-  }
-  .inner-grid-item {
-    padding: 1rem;
-  }
-  
-
-
 }

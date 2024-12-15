@@ -1,0 +1,168 @@
+#student-blogs {
+
+  p {
+    text-align: justify;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background: var(--menu-bg);
+    gap: 0;
+    padding: 0;
+  }
+
+  .title {
+    grid-column: 1 / -1;
+    background: var(--menu-bg);
+    background: linear-gradient(90deg, #832eff, #fe4ff2);
+    width: calc(100% - 20px); /* Subtract 20px to account for the margin */
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding:5px 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .main-content {
+    display: flex;
+    justify-content: space-between; 
+    gap: var(--gap); 
+    width: 100%;
+    background: var(--body-bg);
+  }
+
+  .item {
+    flex: 1; 
+    width: 100%;
+  }
+ 
+  .item:first-child {
+    background: var(--menu-bg);
+    // align-self: flex-start; // avoid the color being stretched
+  }
+
+  /* the column with the image */
+  .item:nth-child(2) {
+    height: 100%; 
+    display: flex; 
+    flex-direction: column;
+    height: auto;
+    align-items: center; 
+    align-self: center; /* Align only this item vertically */
+    background-color: var(--body-bg); 
+  }
+
+  figure {
+    position: relative; /* Makes this the reference point for the popup */
+    display: inline-block; /* Ensures the container is just as wide as the image */
+  }
+
+  figcaption {
+    padding-top:10px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  figure img {
+    width: auto;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle(50%);
+  }
+  
+  .tooltip {
+    position: absolute;
+    bottom: 105%; /* Position the popup above the image */
+    left: 80%; /* Center horizontally relative to the image */
+    transform: translateX(-50%);
+    background-color:var(--gray-6);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    width: 130px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  /* Create the arrow/pointer */
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    top: 99%; /* Position the arrow at the bottom of the popup */
+    left: 25%; /* Center the arrow horizontally relative to the popup */
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--gray-6) transparent transparent  transparent; 
+  }
+
+  .item:nth-child(3),
+  .item:last-child {
+    grid-area: content;
+    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    background-color: var(--body-bg);
+    height: 100%;
+    a:hover {
+      color: var(--anchor);
+    }
+  }
+
+  .header {
+    text-transform: uppercase;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    padding: 1rem 0;
+    position: relative;
+  }
+
+  .footer {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding:1rem 0;
+  }
+
+  .top {
+    width: 100%; /* Full width */
+    margin-top: auto; /* Push footer to the bottom */
+    flex-grow:1;
+    background-color: var(--body-bg);
+  }
+  
+  .item:last-child { 
+    display: none;
+  }
+
+  @media (max-width: 650px) {
+    .item:last-child { 
+      display: block;
+      padding: 0 1rem;
+    }
+    figure:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(-5px);
+    }
+    .item:nth-child(2), 
+    .item:nth-child(3) {
+      display: none;
+    }
+   
+  }
+
+  @media (max-width: 530px) {
+    .main-content { 
+      flex-direction: column;
+    }
+  }
+}

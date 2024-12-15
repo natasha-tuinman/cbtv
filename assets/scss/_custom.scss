@@ -15,6 +15,7 @@
 }
 */
 
+
 @font-face {
     font-family: 'theSeasons';
     src: url('/fonts/the-seasons/The-Seasons-Regular.eot');
@@ -68,11 +69,9 @@ article svg {
 a {
   color: var(--white);
   text-decoration: none;
-  letter-spacing: .04em; /* Adjust spacing for bold text */
 }
 
 a:hover {
-  font-weight: bold;
   text-decoration: underline;
   letter-spacing: normal; 
 }
@@ -82,18 +81,65 @@ button {
   padding: 0.1em 0.5em;
 }
 
+figure {
+  float: left; /* Float the figure to allow wrapping */
+  shape-outside: circle(50%);
+  margin: 0 15px 10px 0; /* Add spacing to the right and below the figure */
+  width: auto;
+}
+
+picture img {
+  width: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: block;
+  margin-right: 0.8rem;
+}
+
+figcaption {
+  clear: left;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--gray-1);
+}
+
 header {
   display: block;
+}
+
+p {
+  line-height: 1.3;
 }
 
 section {
   min-height: 100vh; // use as a backup
   min-height: 100dvh; // better for mobile 
-  max-width: 1200px;
+  max-width: 1500px;
   background: var(--body-bg);
   border-top: 1px solid var(--gray-5);
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   margin: 0 auto;
+}
+
+/* for menus */
+ul {
+  background: var(--menu-bg);
+  padding: 1rem;
+  list-style: disc;
+  & li {
+    padding: 0.5rem;
+    margin-left: 1rem;
+    &:hover {
+      background-color: var(--li);
+    }
+    a {
+      display: block; /* Makes the <a> behave like a block element */
+      width: 100%; /* Ensures it takes the full width of its parent <li> */
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .bg-top {
@@ -107,11 +153,21 @@ section {
   object-fit: contain;  /* Optional: ensures the image maintains aspect ratio */
 }
 
+.container { 
+  box-sizing: border-box;
+  padding: 0 2rem;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  gap:var(--gap);
+}
+
 .cover { 
   background-size:cover!important;
 }
 
-.development {
+/* used for debugging, the extra line below the footer */
+.development { 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -120,60 +176,10 @@ section {
   color: black;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
-  height: 90vh;
-  justify-content: space-between;
-}
 
-.flexible-grid {
-  display:flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
 
-.flexible-grid >* {
+.flexible-grid > * {
   flex: 1;
-}
-
-.grid-container {
-  display: grid;
-  grid-auto-flow: column; // a useful option at times
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic wrapping */
-  height: auto  ;
-  gap: 1.25rem;
-  width: 100%; /* Ensure the container takes up the full width of its parent */
-  max-width: 100%; /* Prevent unintended overflow */
-  box-sizing: border-box; /* Includes padding and border in width calculations */
-  justify-items: center;  /* Optional: center horizontally */
-}
-
-.grid-item {
-  align-self: normal;
-  display: grid;
-  padding: .75rem;
-}
-
-.grid-title {
-  font-size:1.5em;
-  margin:.3em 0;
-  padding-left: 2rem;
-  font-family: "Lastica";
-}
-
-.image-container {
-  width: 300px; /* Set desired width */
-  height: 400px; /* Set desired height */
-  overflow: hidden; /* Hide overflow */
-}
-
-.image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover the container while maintaining aspect ratio */
 }
 
 .title {
@@ -181,62 +187,41 @@ section {
   font-family: Lastica;
   text-transform: uppercase;
   letter-spacing:0.75cqb;
-  margin: 0.3rem 0;
-  text-align: center;
-  align-self: center;
-  justify-self: center;
+  //margin: 0.3rem 0;
+}
+
+/* to go to the top of the page */
+.top {
+  width: 100%;
+  text-align: right;
+  align-content: end;
+  img {
+    width: 30px;
+    aspect-ratio: 1;
+  }
 }
 
 
+/* 1201px and more — Extra large screens, TV */
+/* 1025px — 1200px: Desktops, large screens */
+/* 769px — 1024px: Small screens, laptops */
 
-.primary-header {
-  display: grid;
-  // grid-template-areas: "stack";
-  place-items: center;
-}
-
-.primary-header > * {
-  // grid-area: stack;
-  grid-row: 1 / -1;
-  grid-column: 1 / -1;
-}
-
-
-
+/* Media query for iPads, Tablets */
 @media (max-width: 768px) {
-  body {
+  html {
     font-size: 87.5%; /* Reduce to 14px */
   }
-  section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
+/* Media query for Mobile devices */
 @media (max-width: 480px) {
-  body {
+  html {
     font-size: 75%; /* Reduce to 12px */
   }
 }
 
-@media (min-width: 50em) {
-  .primary-header {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .primary-header__image {
-    grid-column: 1;
-  }
-
-  .primary-header__title {
-    grid-column: 2;
+@media (max-width: 350px) {
+  html {
+    font-size: 62.5%; /* Reduce to 10px */
   }
 }
-
-/*
-<header class="primary-header">
-<img src="" alt="" class="" >
-<h1 class="primary-header__title">
- simplify your CSS
-</h1>
-*/
