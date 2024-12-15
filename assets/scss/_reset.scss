@@ -44,7 +44,8 @@ box-sizing: border-box;
 
 html {
   line-height:1.15;
-  -webkit-text-size-adjust:100%
+  -webkit-text-size-adjust:100%;
+  interpolate-size: allow-keywords;
 }
 
 body {
@@ -61,6 +62,7 @@ hr {
   height:0;
   overflow:visible
 }
+
 
 pre {
   font-family:monospace,monospace;
