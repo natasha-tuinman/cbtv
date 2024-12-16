@@ -18,7 +18,8 @@
   "license": "ISC",
   "dependencies": {
     "jsdoc": "^4.0.4",
-    "netlify-plugin-hugo-cache-resources": "^0.2.1"
+    "netlify-plugin-hugo-cache-resources": "^0.2.1",
+    "sass": "^1.83.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
