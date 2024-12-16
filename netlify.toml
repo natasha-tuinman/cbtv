@@ -1,5 +1,5 @@
 [build]
-  command = "hugo --ignoreVendorPaths themes/* --minify --templateMetrics"
+  command = "npm install sass && hugo --ignoreVendorPaths themes/* --minify --templateMetrics"
   publish = "public"
 
 [context.production.environment]
