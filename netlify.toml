@@ -1,7 +1,8 @@
 [build]
-command = "hugo"
+command = "hugo --ignoreVendorPaths themes/*"
 publish = "public"
 
 [context.production.environment]
 HUGO_VERSION = "0.139.3" # Specify your Hugo version
 HUGO_ENV = "production"
+

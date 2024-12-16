@@ -1,6 +1,6 @@
 title = "CBTV"
 baseURL = "/"
-theme = "" 
+# theme = "" 
 resourceDir = "../resources"
 disableModules = true
 defaultContentLanguage = "en"
