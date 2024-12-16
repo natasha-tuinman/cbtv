@@ -35,3 +35,6 @@ resources/_gen/
 .favorites.json
 *.code-workspace
 config/gargulus
+
+# Local Netlify folder
+.netlify
