@@ -8,7 +8,7 @@
     "url": "git@github.com:natasha-tuinman/cbtv.git"
   },
   "scripts": {
-    "build-css": "sass scss/main.scss static/css/main.css",
+    "build-css": "sass assets/scss/main.scss static/css/main.css",
     "version": " auto-changelog -p --template keepachangelog --commit-limit 0 && git add CHANGELOG.md",
     "deploy": " hugo server;",
     "eslint": " nnpx eslint assets/js/custom.js",
@@ -19,13 +19,13 @@
   "license": "ISC",
   "dependencies": {
     "jsdoc": "^4.0.4",
-    "netlify-plugin-hugo-cache-resources": "^0.2.1",
-    "sass": "^1.83.0"
+    "netlify-plugin-hugo-cache-resources": "^0.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
     "docdash": "^2.0.2",
     "eslint": "^9.16.0",
-    "globals": "^15.13.0"
+    "globals": "^15.13.0",
+    "sass": "^1.83.0"
   }
 }
