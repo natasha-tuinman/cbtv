@@ -4,7 +4,7 @@
 {{- $cookie     := resources.Get "/js/cookieconsent3.js" }}
 {{- $custom     := resources.Get "/js/custom.js" }}
 
-{{ $js := "" }}
+{{ $js := "" }} <!-- Initialize as nil instead of an empty string -->
 
 {{ if $custom }}
     {{- $js = slice $custom $cookie $config | resources.Concat "js/script.js" }}
@@ -12,9 +12,6 @@
     {{ warnf "One or more javascripts are missing." }}
 {{ end }}
 
-<!-- minify only when you are not in development mode -->
-{{- if eq hugo.Environment "production" -}}
-    {{- $js = $js | minify | fingerprint -}}
-{{- end -}}
 
 <script type="module" src="{{ $js.RelPermalink }}" defer ></script>
+
