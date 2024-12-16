@@ -3,6 +3,6 @@ command = "hugo --ignoreVendorPaths themes/*"
 publish = "public"
 
 [context.production.environment]
-HUGO_VERSION = "0.138.3" # Specify your Hugo version
+HUGO_VERSION = "0.138.0" # Specify your Hugo version
 HUGO_ENV = "production"
 
