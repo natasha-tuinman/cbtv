@@ -1,5 +1,5 @@
 [build]
-command = "chmod +x node_modules/.bin/sass && hugo --gc --minify"
+command = "chmod +x node_modules/.bin/sass && npm install sass && hugo --gc --minify"
 publish = "public"
 
 [context.production.environment]
