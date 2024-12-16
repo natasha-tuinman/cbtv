@@ -1,6 +1,6 @@
 [build]
-  command = "npm install sass && hugo --ignoreVendorPaths themes/* --minify --templateMetrics"
-  publish = "public"
+command = "chmod +x node_modules/.bin/sass && hugo --gc --minify"
+publish = "public"
 
 [context.production.environment]
 HUGO_VERSION = "0.138.0" # Specify your Hugo version
