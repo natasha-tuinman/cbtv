@@ -8,9 +8,11 @@
     "url": "git@github.com:natasha-tuinman/cbtv.git"
   },
   "scripts": {
+    "build": "hugo",
+    "build:preview": "hugo --baseURL \"${DEPLOY_PRIME_URL:-/}\" --buildDrafts --buildFuture",
     "build-css": "sass assets/scss/main.scss static/css/main.css",
     "version": " auto-changelog -p --template keepachangelog --commit-limit 0 && git add CHANGELOG.md",
-    "deploy": " hugo server;",
+    "start": " hugo server",
     "eslint": " nnpx eslint assets/js/custom.js",
     "jsdoc": " jsdoc -a all -c jsdoc.json -r -R README.md -d docs/jsdoc "
   },
@@ -23,9 +25,12 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
+    "autoprefixer": "^10.4.20",
     "docdash": "^2.0.2",
     "eslint": "^9.16.0",
     "globals": "^15.13.0",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
     "sass": "^1.83.0"
   }
 }
