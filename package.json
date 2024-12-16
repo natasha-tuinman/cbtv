@@ -8,6 +8,7 @@
     "url": "git@github.com:natasha-tuinman/cbtv.git"
   },
   "scripts": {
+    "build-css": "sass scss/main.scss static/css/main.css",
     "version": " auto-changelog -p --template keepachangelog --commit-limit 0 && git add CHANGELOG.md",
     "deploy": " hugo server;",
     "eslint": " nnpx eslint assets/js/custom.js",
