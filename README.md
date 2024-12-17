@@ -13,7 +13,7 @@ Content is all stored in a folder called *content/cbtv* with some 6 subfolders e
 ## Version
 ```
 hugo version
-hugo v0.136.5+extended linux/amd64 BuildDate=2024-10-24T12:26:27Z VendorInfo=brew
+hugo v0.139.5+extended linux/amd64 BuildDate=2024-10-24T12:26:27Z VendorInfo=brew
 
 go version
 go version go1.16.5 gccgo (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 linux/amd64
@@ -24,8 +24,25 @@ v21.1.0
 Sass version
 1.71.1
 ```
-## Running Hugo
-To run hugo locally on port 1313 run this command:
+## Cloud storage
+The website development repository is stored on *Github.com*. This secures also the version control of the website development. Access is via your email or username *natasha-tuinman*.
+
+## Cloud hosting
+Running your web site on the cloud in handled by *Netlify.com* which pulls data from Github automatically and will try to deploy yhe changes made. For security reasons, access is only via Github authorisation.
+
+## Installing your website locally on your laptop
+You need to clone the repository from Github 
+---
+git clone git@github.com:natasha-tuinman/cbtv.git
+---
+If this goes succesfully then you need to install the dependencies mentioned in package.json
+---
+npm install
+---
+You are nowready to run the website
+
+## Running website locally on your laptop
+ you can run hugo locally on port 1313 using this command:
 --- 
 hugo server --disableFastRender
 ---

@@ -1410,17 +1410,21 @@ section#contact .mail img {
 
 footer {
   border-top: 1px solid slategray;
-  position: fixed;
   bottom: 0;
   width: 100%;
-}
-footer .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 0.5rem 0;
+}
+footer p {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 footer a {
+  display: flex;
+  flex-direction: row;
   color: var(--body-text);
   text-decoration: none;
 }

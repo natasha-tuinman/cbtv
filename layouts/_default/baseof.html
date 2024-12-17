@@ -48,8 +48,6 @@
       <link rel="canonical" href="{{ .Permalink }}">
     {{ end }}
 
-    
-
     {{ if hugo.IsProduction }}
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
@@ -65,6 +63,5 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
-   
   </body>
 </html>
