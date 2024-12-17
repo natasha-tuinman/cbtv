@@ -27,6 +27,7 @@
 
   .content {
     padding: 1rem 2rem;
+    max-width: 900px;
   }
 
   .top {
@@ -64,36 +65,36 @@
 
   input {
     color: var(--black);
-    background:var(--white);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid #ccc;
+    outline-color:  #ccc;
     transition: border-color 0.3s ease;
+    padding: 5px;
+    margin: 3px;
   }
 
-  input[type="number"]:required {
-    // accent-color: #ccc;    
+  input[type="text"] {
+    outline-color: var(--success);
+  }
+
+  textarea {
+    outline-color: var(--success);
+  }
+
+  input[type="number"] {
     border: 1px solid #ccc;
     border-radius: 4px;
-    padding: 5px;
     width: 60px;
   }
 
-  input[type="number"]:required:valid {
-    border-color: green;
+  input[type="number"]:not(placeholder-shown):valid {
+    outline-color: var(--success);
   }
 
-  input[type="number"]:required:invalid {
-    border-color: red;
+  input[type="number"]:not(placeholder-shown):invalid {
+    outline-color: var(--error);
   }
 
-  input[type="number"]:focus {
-    border-color: #ccc; 
-  }
-  
-  input[type="number"]:required:focus:invalid {
-    border-color: red;
+  input[type="number"]:focus:invalid {
+    outline-color: var(--warning);
   }
 
   input[type="radio"] {
@@ -102,7 +103,7 @@
   }
 
   input[type="radio"]:focus {
-    border-color: #4CAF50;  
+    border-color: var(--success);  
     border-bottom-width: 2px;
     outline: none;  /* Remove the default focus outline */
   }  
@@ -166,6 +167,7 @@
       border-radius: 8px;
       border: blue;
       padding: 4px 50px;
+      color: white;
   }
 
 

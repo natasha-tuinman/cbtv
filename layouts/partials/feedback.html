@@ -3,11 +3,11 @@
   <div>{{ .Content }}</div>
     <form class="content">
         <label for="age">{{ i18n "age" }}</label>
-        <input type="number" required id="age" name="age" step="1" min="16" max="100" />
+        <input type="number" placeholder="Age?" required id="age" name="age" step="1" min="16" max="100" />
         <label for="gender">{{ i18n "gender" }}</label>
-        <input type="text" required id="gender" name="gender">
+        <input type="text"  placeholder="Are you (fe)male?" required id="gender" name="gender">
         <label for="name">{{ i18n "name" }} ({{ i18n "optional" }})</label>
-        <input type="text" id="name" name="name">
+        <input type="text" placeholder="Your name" id="name" name="name">
         <label></label><div></div>
         <!-- Display the question -->
         {{ range $index, $value := .Params.data }}
