@@ -24,4 +24,6 @@
   translation: "optional"
 - id: submit
   translation: "Submit"
+- id: improve
+  translation: "Please let us know how we can improve"
   

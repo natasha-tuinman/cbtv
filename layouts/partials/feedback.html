@@ -21,6 +21,8 @@
           <input type="radio" name="question_{{ $q }}" value="5" id="question-5_{{ $q }}" class="custom-radio">
         </div>    
         {{ end }}
+        <label for="improve">{{ .Params.improve }}</label>
+        <textarea id="improve" name="description" rows="4" cols="50" placeholder="Enter your text here..."></textarea>
       <div class="button">
         <button type="submit">{{ i18n "submit" }}</button>
       </div>
