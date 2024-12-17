@@ -1,3 +1,21 @@
 {{- $main := resources.Get "scss/cbtv.scss" -}}
 {{- $cbtv := $main | css.Sass  -}}
 <link href="/css/cbtv.css" rel="stylesheet"> 
+
+
+{{/* We output the style here */}}
+
+{{ $opts := dict
+  "transpiler" "dartsass"
+  "targetPath" "css/style.css"
+  "vars" site.Params.styles
+  "enableSourceMap" (not hugo.IsProduction)
+  "includePaths" (slice "node_modules/bootstrap/scss")
+}}
+
+/* | css.Sass $opts | minify | fingerprint */
+
+{{ with resources.Get "scss/cbtv.scss"  | css.Sass $opts }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" >
+{{ end }}
+
