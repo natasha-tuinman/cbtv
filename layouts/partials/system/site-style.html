@@ -1,7 +1,3 @@
-{{ $main := resources.Get "scss/cbtv.scss" | css.Sass }}
-
-{{ if hugo.IsProduction }}
-  {{ $main = $main | resources.Minify | resources.Fingerprint }}
-{{ end }}
-
-<link href="{{ $main.RelPermalink }}" rel="stylesheet">
+{{- $main := resources.Get "scss/cbtv.scss" -}}
+{{- $cbtv := $main | css.Sass  -}}
+<link href="/css/cbtv.css" rel="stylesheet"> 

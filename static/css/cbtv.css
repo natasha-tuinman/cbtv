@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* This file name is used in site-style.html to output this styling in the head of the html page */
 /* _variables.scss
 
 Open Props, see https://open-props.style/ */
@@ -917,7 +918,7 @@ textarea {
 [type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
-  padding: 0 4px;
+  padding: 1px 5px;
   outline-color: var(--green-6);
 }
 

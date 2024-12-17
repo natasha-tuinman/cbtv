@@ -19,3 +19,12 @@
   <link rel="stylesheet" href="{{ .RelPermalink }}" >
 {{ end }}
 
+
+
+
+{{ $main := resources.Get "scss/cbtv.scss" | css.Sass }}
+{{ if hugo.IsProduction }}
+  {{ $main = $main | resources.Minify | resources.Fingerprint }}
+{{ end }}
+<link href="{{ $main.RelPermalink }}" rel="stylesheet">
+
