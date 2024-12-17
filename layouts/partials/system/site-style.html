@@ -1,15 +1,4 @@
+{{- $main := resources.Get "scss/cbtv.scss" -}}
+{{- $cbtv := $main | css.Sass  -}}
+<link href="/css/cbtv.css" rel="stylesheet"> 
 
-{{ $opts := dict
-  "targetPath" "css/style.css"
-  "enableSourceMap" (not hugo.IsProduction)
-}}
-
-{{ if hugo.IsProduction }}
-  {{ with resources.Get "scss/cbtv.scss" | css.Sass $opts | minify | fingerprint }}
-  <link href="{{ .RelPermalink }}" rel="stylesheet">
-  {{ end }}
-{{ else }}
-  {{ with resources.Get "scss/cbtv.scss" | css.Sass $opts }}
-  <link href="{{ .RelPermalink }}" rel="stylesheet">
-  {{ end }}
-{{ end }}
