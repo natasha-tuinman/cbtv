@@ -14,3 +14,14 @@
   translation: "Message us"
 - id: step
   translation: "Step"
+- id: age
+  translation: "Age"
+- id: gender
+  translation: "Gender"
+- id: name
+  translation: "Name"
+- id: optional
+  translation: "optional"
+- id: submit
+  translation: "Submit"
+  

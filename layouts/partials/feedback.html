@@ -1,9 +1,30 @@
 <div class="container">
-  <div class="title"> </div>
-  {{- range .Resources }}
-  <div class="content">
-    <img src="{{ .RelPermalink }}" alt="Feedback">
-    </div>
-  {{ end }}
+  <div class="title">{{ .Title }} </div>
+  <div>{{ .Content }}</div>
+    <form class="content">
+        <label for="age">{{ i18n "age" }}</label>
+        <input type="number" required id="age" name="age" step="1" min="16" max="100" />
+        <label for="gender">{{ i18n "gender" }}</label>
+        <input type="text" required id="gender" name="gender">
+        <label for="name">{{ i18n "name" }} ({{ i18n "optional" }})</label>
+        <input type="text" id="name" name="name">
+        <label></label><div></div>
+        <!-- Display the question -->
+        {{ range $index, $value := .Params.data }}
+        <legend>{{ $value.question }}</legend>
+        <div class="radio-buttons">
+          {{ $q := add $index 1 }}
+          <input type="radio" name="question_{{ $q }}" value="1" id="question-1_{{ $q }}" class="custom-radio">        
+          <input type="radio" name="question_{{ $q }}" value="2" id="question-2_{{ $q }}" class="custom-radio">
+          <input type="radio" name="question_{{ $q }}" value="3" id="question-3_{{ $q }}" class="custom-radio">
+          <input type="radio" name="question_{{ $q }}" value="4" id="question-4_{{ $q }}" class="custom-radio">
+          <input type="radio" name="question_{{ $q }}" value="5" id="question-5_{{ $q }}" class="custom-radio">
+        </div>    
+        {{ end }}
+      <div class="button">
+        <button type="submit">{{ i18n "submit" }}</button>
+      </div>
+  </form>
   {{  partial "top-of-page" . }}
-</div>
+
+  

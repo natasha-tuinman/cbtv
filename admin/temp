@@ -1,0 +1,23 @@
+ {{ range $index, $value := .Params.data }}
+       
+          <!-- Display the question -->
+          <label>{{ $value.question }}</label>
+          <div class="radio-buttons">
+            {{ $q := add $index 1 }}
+            <input type="radio" name="question_{{ $q }}" value="1" id="question-1_{{ $q }}">
+            <label for="option1_{{ $q }}">Option 1</label>
+          
+            <input type="radio" name="question_{{ $q }}" value="2" id="question-2_{{ $q }}">
+            <label for="option2_{{ $q }}">Option 2</label>
+          
+            <input type="radio" name="question_{{ $q }}" value="3" id="question-3_{{ $q }}">
+            <label for="option3_{{ $q }}">Option 3</label>
+          
+            <input type="radio" name="question_{{ $q }}" value="4" id="question-4_{{ $q }}">
+            <label for="option4_{{ $q }}">Option 4</label>
+          
+            <input type="radio" name="question_{{ $q }}" value="5" id="question-5_{{ $q }}">
+            <label for="option5_{{ $q }}">Option 5</label>
+          </div>
+      
+      {{ end }}

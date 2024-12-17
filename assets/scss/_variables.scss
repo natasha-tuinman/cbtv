@@ -3,20 +3,7 @@
 Open Props, see https://open-props.style/ */
 
 /* Default styles (light mode) */
-:root {
-  --body-bg: #2c1e4a; 
-  --menu-bg: #5644a9;
-  --body-text: white;
-  --nav-bg: rgb(69,92,115);
-  --nav-text: var(--body-bg);
-  --border-radius: 2rem;
-  --gap: 1rem;
-  --svg-fill-color: white;
-  --svg-stroke-color: black;
-  --li: darkmagenta;
-  --anchor: lime;
-  --gradient: linear-gradient(90deg, #832eff, #fe4ff2);
-}
+
 
 :where(html) {
 	--font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;

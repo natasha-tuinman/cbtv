@@ -15,6 +15,21 @@
 }
 */
 
+:root {
+  --body-bg: #2c1e4a; 
+  --menu-bg: #5644a9;
+  --body-text: white;
+  --nav-bg: rgb(69,92,115);
+  --nav-text: var(--body-bg);
+  --border-radius: 2rem;
+  --gap: 1rem;
+  --svg-fill-color: white;
+  --svg-stroke-color: black;
+  --li: darkmagenta;
+  --anchor: lime;
+  --gradient: linear-gradient(90deg, #832eff, #fe4ff2);
+  --radio: var(--green-8);
+}
 
 @font-face {
     font-family: 'theSeasons';
@@ -39,7 +54,7 @@
 }
 
 
-html {
+html { 
   color-scheme: dark light;
 }
 
@@ -79,6 +94,11 @@ a:hover {
 button {
   max-width: max-content;
   padding: 0.1em 0.5em;
+  opacity: 0.7;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 }
 
 figure {
