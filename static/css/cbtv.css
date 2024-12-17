@@ -1848,6 +1848,30 @@ header nav button:hover {
   }
 }
 
+#feedback .container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  justify-items: center;
+}
+#feedback .title {
+  grid-column: 1/-1;
+  text-align: center;
+}
+#feedback .content {
+  text-align: center;
+}
+#feedback .top {
+  grid-column: 1/-1;
+}
+#feedback .top img {
+  aspect-ratio: 1;
+  width: 30px;
+}
+#feedback img:first-child {
+  max-width: 1000px;
+}
+
 /* _cookieconsent3.scss 
 
 source: https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css

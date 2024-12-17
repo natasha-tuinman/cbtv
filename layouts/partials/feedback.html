@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="title"> </div>
+  {{- range .Resources }}
+  <div class="content">
+    <img src="{{ .RelPermalink }}" alt="Feedback">
+    </div>
+  {{ end }}
+  {{  partial "top-of-page" . }}
+</div>

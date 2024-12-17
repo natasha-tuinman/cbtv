@@ -1,0 +1,31 @@
+#feedback {
+  
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .title {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .top {
+    grid-column: 1 / -1;
+    img {
+      aspect-ratio: 1;
+      width: 30px;
+    }
+  }
+
+  img:first-child {
+    max-width: 1000px;
+  }
+
+}
