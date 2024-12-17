@@ -1,20 +1,12 @@
 {{/* We output the style here */}}
 
 {{ $opts := dict
-  "transpiler" "dartsass"
   "targetPath" "css/style.css"
-  "vars" site.Params.styles
   "enableSourceMap" (not hugo.IsProduction)
-  "includePaths" (slice "node_modules/bootstrap/scss")
 }}
 
-{{ if hugo.IsProduction }}
-  {{/* We fingerprint in production for cache busting purposes */}}
-  {{ with resources.Get "scss/cbtv.scss" | toCSS $opts | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-  {{ end }}
-{{ else }}
-  {{ with resources.Get "scss/cbtv.scss" | toCSS $opts  }}
+/* | css.Sass $opts | minify | fingerprint */
+
+{{ with resources.Get "scss/cbtv.scss"  | css.Sass $opts }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" >
-  {{ end }}
 {{ end }}
