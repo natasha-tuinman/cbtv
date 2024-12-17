@@ -45,6 +45,7 @@ description = "Where creativity meets opportunity"
 recent_posts_number = 5
 featured_image= 'images/home.png'
 top_of_page= "images/up-arrow.png"
+custom_css=["cbtv.scss"]
 
 [params.social.facebook]
 username = "ourmaninindia"

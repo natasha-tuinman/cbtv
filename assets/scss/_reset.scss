@@ -188,6 +188,8 @@ textarea {
 [type=search] {
   -webkit-appearance: textfield;
   outline-offset:-2px;
+  padding: 1px 5px;
+  outline-color: var(--green-6);
 }
 
 [type=search]::-webkit-search-decoration {

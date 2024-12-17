@@ -27,8 +27,9 @@
         {{- end -}}
       ">
     {{ end }}
-
+    {{"<!-- The stylesheet! -->"| safeHTML }}
     {{ partial "system/site-style.html" . }}
+    {{"<!-- The scripts -->"| safeHTML }}
     {{ partial "system/site-scripts.html" . }}
 
     {{ block "favicon" . }}
@@ -63,5 +64,6 @@
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+
   </body>
 </html>
